@@ -1,0 +1,1 @@
+( ( sleep 5 ; rm -rf .pki .vscode-oss ) & codium --user-data-dir /home/kino/.config/VSCodium/ --extensions-dir /home/kino/.config/VSCodium/extensions/ )

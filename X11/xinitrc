@@ -1,0 +1,8 @@
+#!/bin/bash
+
+hwclock -w &
+picom --no-vsync &
+pulseaudio --start &
+xbindkeys -f /home/kino/.config/xbindkeys/xbindkeysrc &
+feh --no-fehbg --bg-fill /home/kino/Pictures/Wallpapers/astronaut.jpg &
+exec bspwm
