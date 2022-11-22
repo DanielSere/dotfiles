@@ -1,9 +1,9 @@
 #!/bin/bash
 
-picom --no-vsync &
+picom &
 pulseaudio --start &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &
-feh --no-fehbg --bg-fill /home/kino/Pictures/Wallpapers/astronaut.jpg &
+xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
 hwclock -w &
 xbacklight -set 50 &
 pamixer --set-volume 50 &
