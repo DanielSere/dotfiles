@@ -2,16 +2,28 @@
 ## wm independent hotkeys ##
 ############################
 
-# terminal emulator
+# terminal
 super + Return
 	tilix
 
-# browser launcher
+# browser
 alt + 1
 	librewolf
 
+# vscodium
 alt + 2
 	codium
+
+# octoxbps
+alt + 3
+	octoxbps
+
+# flatpaks manager
+alt + 4
+	flatseal
+
+
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
