@@ -20,6 +20,7 @@ set.clipboard = "unnamed,unnamedplus"
 set.swapfile = false
 set.cursorline = true
 set.cursorcolumn = true
+set.guicursor = "a:hor100-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
 set.tabstop = 2
 set.shiftwidth = 2
 set.syntax = "enable"
