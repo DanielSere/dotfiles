@@ -1,10 +1,10 @@
 #!/bin/bash
 
-picom &
+picom --vsync &
 pulseaudio --start &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &
-xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
+#xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
 hwclock -w &
 xbacklight -set 50 &
 pamixer --set-volume 50 &
-exec bspwm
+exec bspwm --locked > /dev/null 2>&1
