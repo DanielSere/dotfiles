@@ -39,6 +39,7 @@ alias ssh-gen="ssh-keygen -t rsa -b 4069 -C"
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
 
+pfetch
 
 
-PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
