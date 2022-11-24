@@ -1,0 +1,14 @@
+#!/bin/sh
+
+vol=$(pamixer --get-volume-human)
+
+# if [ "$vol" = "muted" ]; then
+  # printf "%s\n" "奔off"
+# else
+	# printf "%s\n" "奔$vol"
+# fi
+if [ "$vol" = "muted" ] ; then
+	vol="off"
+fi
+
+printf "%s\n" "奔$vol"

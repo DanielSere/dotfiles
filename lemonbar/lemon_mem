@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ram_usage=$(free -t --mega | grep Total | awk '{print $3/1024*100}' | cut -d "." -f 1 | awk '{print $1/100}')
+
+printf "%s\n" "龍$ram_usage G"
