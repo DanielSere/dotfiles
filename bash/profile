@@ -28,6 +28,7 @@ export LESSHISTFILE=$XDG_STATE_HOME/less/history
 #export $(dbus-launch)
 
 
-
+# Update date
+# up-date
 # Start X
 estartx
