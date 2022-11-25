@@ -59,8 +59,8 @@ super + f
 ###########
 
 # change windows focus
-super + ctrl + { Left, Down, Up, Right }
-	bspc node -f {west,south,north,east}
+super + alt + { Left, Down, Up, Right, Next, Prior }
+	bspc node -f { west, south, north, east, next.local.!hidden.window, prev.local.!hidden.window }
 
 # focus next/prev desktop
 super + { Left, Right }
@@ -70,7 +70,7 @@ super + {1-5}
 	bspc desktop -f '^{1-5}'
 
 # send to next/prev desktop
-super + shift + { Left, Right }
+super + ctrl + { Left, Right }
 	bspc node -d { prev, next }; bspc desktop -f { prev, next }
 
 ############
@@ -78,7 +78,7 @@ super + shift + { Left, Right }
 ############
 
 # risize windows
-super + alt + {Left, Down, Up, Right}
+super + shift + {Left, Down, Up, Right}
 	{bspc node @parent/second -z left -20 0; bspc node @parent/first -z right -20 0, \
 	bspc node @parent/second -z top 0 +20; bspc node @parent/first -z bottom 0 +20, \
 	bspc node @parent/first -z bottom 0 -20; bspc node @parent/second -z top 0 -20, \
