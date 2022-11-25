@@ -8,9 +8,6 @@
 eval "$(starship init bash)"
 
 # Alias
-alias cl='clear'
-alias xxx='exit'
-alias ...='cd ..'
 # Flatpak
 alias fii='flatpak install'
 alias fcc='flatpak uninstall --unused'
@@ -26,14 +23,15 @@ alias vtop='npx vtop'
 alias nodemon='npx nodemon'
 alias serve='npx serve -s'
 # XBPS
-alias iii='sudo vpm install' # xbps-install -S
-alias uuu='sudo vpm update' # xbps-install -Su
-alias rrr='sudo vpm removerecursive' # xbps-remove -Rf
-alias ccc='sudo vpm cleanup ; sudo vpm autoremove' # xbps-remove -Oofv
+alias iii='sudo vpm install'
+alias uuu='sudo vpm update'
+alias rrr='sudo vpm removerecursive'
+alias ccc='sudo vpm cleanup ; sudo vpm autoremove'
 alias sss='sudo vpm search'
 alias fff='sudo vpm info'
 # Others
-alias lll='lsd -la'
+alias ll='lsd -l'
+alias la='lsd -la'
 alias cl='clear'
 alias xxx='exit'
 alias ...='cd ..'
