@@ -3,9 +3,7 @@
 picom --vsync &
 pulseaudio --start &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &
-xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
-xbacklight -set 100 &
-pamixer --set-volume 100 &
-./home/kino/dotfiles/polybar/launch.sh &
+launch-polybar &
 tilix &
+xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
 exec bspwm
