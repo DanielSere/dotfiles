@@ -18,11 +18,11 @@
     XF86AudioMute 
 
 # volume ++++
-"pamixer -i 5"
+"pamixer -i 10"
     m:0x0 + c:123
     XF86AudioRaiseVolume 
 
 # volume ----
-"pamixer -d 5"
+"pamixer -d 10"
     m:0x0 + c:122
     XF86AudioLowerVolume 
