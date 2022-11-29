@@ -3,12 +3,12 @@
 ################
 
 # light ++++
-"xbacklight -inc 5"
+"xbacklight -inc 10"
     m:0x0 + c:233
     XF86MonBrightnessUp 
 
 # light ----
-"set_light"
+"xbacklight -dec 10"
     m:0x0 + c:232
     XF86MonBrightnessDown 
 
@@ -26,3 +26,15 @@
 "pamixer -d 10"
     m:0x0 + c:122
     XF86AudioLowerVolume 
+
+# screenshot
+"gscreenshot"
+		m:0x0 + c:107
+		Print
+
+# some useful keys
+m:0x0 + c:135
+Menu
+
+m:0x0 + c:124
+XF86PowerOff

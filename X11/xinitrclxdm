@@ -1,13 +1,11 @@
 #!/bin/bash
 
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
-	eval $(dbus-launch --auto-syntax --exit-with-session)
-fi
+# if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
+	# eval $(dbus-launch --auto-syntax --exit-with-session)
+# fi
 
 picom &
-redshift &
 launch-polybar &
-xbacklight -set 50 &
 xsetroot -cursor_name left_ptr &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &
 xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &

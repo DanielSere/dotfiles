@@ -6,21 +6,25 @@
 super + Return
 	tilix
 
+# floating terminal
+alt + grave
+	bspc rule -a \* -o state=floating && tilix
+
 # browser
 alt + 1
-	librewolf
+	librewolf.AppImage
 
 # vscodium
 alt + 2
 	codium
 
-# octoxbps
+# file manager
 alt + 3
-	octoxbps
+	thunar
 
 # flatpaks manager
 alt + 4
-	flatseal
+	flatseal.Flatpak
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -46,17 +50,13 @@ super + q
 super + k
  bspc node -k
 
-######################
-## tiled/fullscreen ##
-######################
-
-# alternate between the tiled and monocle layout
-super + f
-	bspc desktop -l next
-
 ###########
 ## focus ##
 ###########
+
+# toggle fullscreen
+super + f
+	bspc node --state ~fullscreen
 
 # change windows focus
 super + alt + { Left, Down, Up, Right, Next, Prior }
@@ -66,20 +66,17 @@ super + alt + { Left, Down, Up, Right, Next, Prior }
 super + { Left, Right }
 	bspc desktop -f { prev, next }
 
-super + {1-5}
-	bspc desktop -f '^{1-5}'
-
 # send to next/prev desktop
 super + ctrl + { Left, Right }
-	bspc node -d { prev, next }; bspc desktop -f { prev, next }
+	bspc node -d { prev, next } --follow
 
 ############
 ## resize ##
 ############
 
 # risize windows
-super + shift + {Left, Down, Up, Right}
-	{bspc node @parent/second -z left -20 0; bspc node @parent/first -z right -20 0, \
-	bspc node @parent/second -z top 0 +20; bspc node @parent/first -z bottom 0 +20, \
-	bspc node @parent/first -z bottom 0 -20; bspc node @parent/second -z top 0 -20, \
-	bspc node @parent/first -z right +20 0; bspc node @parent/second -z left +20 0}
+super + shift + { Left, Down, Up, Right }
+	{bspc node @parent/second -z left -20 0 ; bspc node @parent/first -z right -20 0, \
+	bspc node @parent/second -z top 0 +20 ; bspc node @parent/first -z bottom 0 +20, \
+	bspc node @parent/first -z bottom 0 -20 ; bspc node @parent/second -z top 0 -20, \
+	bspc node @parent/first -z right +20 0 ; bspc node @parent/second -z left +20 0}

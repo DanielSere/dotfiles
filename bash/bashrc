@@ -1,4 +1,5 @@
-# .bashrc
+#!/bin/bash
+# ~/.bashrc
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -30,12 +31,15 @@ alias ccc='sudo vpm cleanup ; sudo vpm autoremove'
 alias sss='sudo vpm search'
 alias fff='sudo vpm info'
 # Others
-alias ll='lsd -l'
-alias la='lsd -la'
+alias ll='lsd -la'
 alias cl='clear'
 alias xxx='exit'
 alias ...='cd ..'
-alias ssh-gen="ssh-keygen -t rsa -b 4069 -C"
-alias reboot='sudo reboot'
-alias poweroff='sudo poweroff'
+alias ssh-gen='ssh-keygen -t rsa -b 4069 -C'
+# alias reboot='sudo xbacklight -set 0; sudo reboot'
+# alias poweroff='sudo xbacklight -set 0; sudo poweroff'
+alias sudoers='sudo nvim /etc/sudoers.d/wheel'
 
+if [ -n "$TILIX_ID" ]; then
+	pfetch
+fi
