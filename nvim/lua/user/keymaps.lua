@@ -20,13 +20,6 @@ map('n', '<leader>tc', ':bd!<cr>', { desc = 'Close Terminal' })
 map('n', '<leader>tl', ':terminal lazygit<cr>:startinsert<cr>', {desc = 'Open Lazygit'})
 map('t', '<esc>', '<C-\\><C-n>', {desc = 'Return to Normal'})
 
--- map('i', '{', '{}<esc>i', {desc = 'Autopair {}'})
--- map('i', '[', '[]<esc>i', {desc = 'Autopair []'})
--- map('i', '(', '()<esc>i', {desc = 'Autopair ()'})
--- map('i', '"', '""<esc>i', {desc = 'Autopair ""'})
--- map('i', "'", "''<esc>i", {desc = "Autopair ''"})
--- map('i', '<', '<><esc>i', {desc = 'Autopair <>'})
-
 map('n', '<leader>pc', ':PackerCompile <cr>', { desc = 'Packer Compile' })
 map('n', '<leader>pi', ':PackerInstall <cr>', { desc = 'Packer Install' })
 map('n', '<leader>ps', ':PackerSync <cr>',    { desc = 'Packer Sync' })
