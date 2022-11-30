@@ -1,5 +1,0 @@
-#!/bin/bash
-
-lightness=$(xbacklight -get | cut -d "." -f 1)
-
-printf "%s\n" " $lightness%"

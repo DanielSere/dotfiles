@@ -15,12 +15,12 @@ alias fcc='flatpak uninstall --unused'
 alias fuu='flatpak update'
 alias frr='flatpak uninstall'
 alias fll='flatpak list'
+alias fee='flatpak run'
 # Python
 alias cvenv='python -m venv env'
 alias avenv='source env/bin/activate'
 alias dvenv='deactivate'
 # NPM
-alias vtop='npx vtop'
 alias nodemon='npx nodemon'
 alias serve='npx serve -s'
 # XBPS
@@ -32,14 +32,11 @@ alias sss='sudo vpm search'
 alias fff='sudo vpm info'
 # Others
 alias ll='lsd -la'
+alias ls='lsd -l'
 alias cl='clear'
 alias xxx='exit'
 alias ...='cd ..'
 alias ssh-gen='ssh-keygen -t rsa -b 4069 -C'
-# alias reboot='sudo xbacklight -set 0; sudo reboot'
-# alias poweroff='sudo xbacklight -set 0; sudo poweroff'
+alias reboot='sudo reboot'
+alias poweroff='sudo poweroff'
 alias sudoers='sudo nvim /etc/sudoers.d/wheel'
-
-if [ -n "$TILIX_ID" ]; then
-	pfetch
-fi

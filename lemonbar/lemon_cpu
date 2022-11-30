@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cpu_usage=$(mpstat 1 1 | grep 'Average' | awk '{print 100-$12}')
-
-printf "%s\n" " $cpu_usage%"
-
