@@ -26,6 +26,10 @@ alt + 3
 alt + 4
 	flatseal.Flatpak
 
+# open clipman popup
+alt + c
+	xfce4-popup-clipman
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
