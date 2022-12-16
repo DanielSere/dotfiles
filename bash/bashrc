@@ -16,6 +16,8 @@ alias fuu='flatpak update'
 alias frr='flatpak uninstall'
 alias fll='flatpak list'
 alias fee='flatpak run'
+alias fss='flatpak search'
+alias mgba='flatpak run io.mgba.mGBA'
 # Python
 alias cvenv='python -m venv env'
 alias avenv='source env/bin/activate'
