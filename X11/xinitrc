@@ -11,5 +11,5 @@ launch-polybar &
 xbacklight -set 50 &
 xsetroot -cursor_name left_ptr &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &
-xwallpaper --zoom /home/kino/Pictures/Wallpapers/gunnm.jpg &
+xwallpaper --zoom /home/kino/Pictures/Wallpapers/352.jpg &
 exec bspwm
