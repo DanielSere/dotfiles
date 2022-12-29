@@ -12,4 +12,4 @@ while pgrep -u $UID -x polybar > /dev/null
 done
 
 # Launch the bar
-polybar -q main -c "$DIR"/config.ini &
+polybar -q main -c /home/kino/.config/polybar/config.ini &

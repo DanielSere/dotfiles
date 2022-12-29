@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+case "clear" in
+	*)
+		echo "action	remove	identifier	preview" > "$FIFO_UEBERZUG" ;;
+esac

@@ -6,10 +6,11 @@ fi
 
 
 picom &
-redshift  -c ~/.config/redshift/config &
-launch-polybar &
 xbacklight -set 50 &
+~/.config/polybar/polybar.sh &
 xsetroot -cursor_name left_ptr &
+redshift  -c ~/.config/redshift/config &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &
 xwallpaper --zoom /home/kino/Pictures/Wallpapers/352.jpg &
+polybar -q main -c /home/kino/.config/polybar/config.ini &
 exec bspwm

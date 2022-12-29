@@ -7,9 +7,9 @@ require 'user.comments'
 require 'user.indentline'
 require 'user.gitsigns'
 require 'user.which-key'
--- require 'user.telescope'
+require 'user.telescope'
 require 'user.treesitter'
--- require 'user.lsp'
+require 'user.lsp'
 require 'user.cmp'
 
 --[[ Modeline ]]

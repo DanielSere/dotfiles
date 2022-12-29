@@ -6,7 +6,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-export PATH=$PATH:$HOME/.bin
+export PATH=$HOME/.bin:$PATH
 
 export XDG_RUNTIME_DIR=/run/user/$UID
 export XDG_DATA_HOME=$HOME/.local/share
@@ -26,6 +26,7 @@ export LESSHISTFILE=$XDG_STATE_HOME/less/history
 export XCURSOR_PATH=$XDG_DATA_HOME/icons:/usr/share/icons
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export EDITOR=nvim
 
 # Start X
 clear ; clear ; startx -x %XINITRC -- vt1 &> /dev/null

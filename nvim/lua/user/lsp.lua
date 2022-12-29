@@ -91,3 +91,4 @@ require('lspconfig').html.setup {}
 require('lspconfig').cssls.setup {}
 require('lspconfig').tsserver.setup {}
 require('lspconfig').marksman.setup {}
+require('lspconfig').bashls.setup {}

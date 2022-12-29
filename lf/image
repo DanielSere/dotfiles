@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+case "$1" in
+	draw)
+		echo "action	add	identifier	preview	path	$2	width	$3	height	$4	x	$5	y	$6" > "$FIFO_UEBERZUG";;
+esac
