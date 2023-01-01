@@ -1,2 +1,9 @@
 #!/bin/bash
-echo $(xtitle | sed 's/.* //')
+
+XTITLE=$(xtitle | sed 's/.* //')
+
+if [ -z $XTITLE ]; then
+	XTITLE="Desktop"
+fi
+
+echo $XTITLE
