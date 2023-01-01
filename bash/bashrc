@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.bashrc
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -8,7 +7,10 @@
 # Set up starship
 eval "$(starship init bash)"
 
-# Alias
+###########
+## Alias ##
+###########
+
 # Flatpak
 alias fii='flatpak install'
 alias fcc='flatpak uninstall --unused'
@@ -17,6 +19,11 @@ alias frr='flatpak uninstall'
 alias fll='flatpak list'
 alias fee='flatpak run'
 alias fss='flatpak search'
+alias librewolf='flatpak run io.gitlab.librewolf-community &'
+alias peazip='flatpak run io.github.peazip.Peazip &'
+alias flatseal='flatpak run com.github.tchx84.Flatseal &'
+alias mgba='flatpak run io.mgba.mGBA &'
+alias smplayer='flatpak run info.smplayer.SMPlayer'
 # Python
 alias cvenv='python -m venv env'
 alias avenv='source env/bin/activate'
@@ -42,18 +49,12 @@ alias up-grub='sudo update-grub'
 alias polybar='pkill polybar; sleep 1; polybar -q main -c /home/kino/.config/polybar/config.ini &'
 alias xdgninja='~/.bin/xdg-ninja/xdg-ninja.sh'
 alias lf='~/.config/lf/lf || ~/.config/lf/lf'
-alias bat='bat -p --color always'
 alias ssh-gen='ssh-keygen -t rsa -b 4069 -C'
 alias ftprn8p='lftp 192.168.0.2:3000 -u kino'
+alias bat='bat --style=plain --paging=never --color=always'
 # Apps
-alias librewolf='flatpak run io.gitlab.librewolf-community &'
-alias peazip='flatpak run io.github.peazip.Peazip &'
-alias flatseal='flatpak run com.github.tchx84.Flatseal &'
-alias mgba='flatpak run io.mgba.mGBA &'
-alias smplayer='flatpak run info.smplayer.SMPlayer'
-alias appfinder='bspc rule -a \* -o state=floating rectangle=600x500 && xfce4-appfinder &'
 alias screenshot='xfce4-screenshooter &'
-alias codium='((sleep 5 ; rm -rf ~/.pki/ ~/.vscode-oss/) & ~/.bin/vscodium/bin/codium --user-data-dir ~/.config/VSCodium/ --extensions-dir ~/.config/VSCodium/extensions/)'
+alias codium='(sleep 5 ; rm -rf ~/.pki/ ~/.vscode-oss/) & ~/.bin/vscodium/bin/codium --user-data-dir ~/.config/VSCodium/ --extensions-dir ~/.config/VSCodium/extensions/'
 alias bulkr='thunar -B'
 # Basics
 alias ll='lsd -la'
