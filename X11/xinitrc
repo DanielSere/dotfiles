@@ -4,10 +4,10 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
 	eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
 
-
+# compositor
 picom &
+greenclip daemon &
 xbacklight -set 50 &
-~/.config/polybar/polybar.sh &
 xsetroot -cursor_name left_ptr &
 redshift  -c ~/.config/redshift/config &
 xbindkeys -f /home/kino/.config/X11/xbindkeysrc &

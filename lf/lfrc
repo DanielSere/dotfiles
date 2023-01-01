@@ -52,6 +52,7 @@ map d
 map c
 map e
 map f
+map gg
 
 # Basics
 map <enter> $$EDITOR "$f"
@@ -59,13 +60,11 @@ map md mkdir
 map mf mkfile
 map ch chmod
 map smf sudomkfile
-
 map . set hidden!
 map DD delete
 map p paste
 map x cut
 map y copy
-map <enter> open
 map ms $mkscript
 map ch chmod
 map bg setwallpaper
@@ -78,6 +77,7 @@ map R reload
 map C clear
 map U unselect
 # Movement
+map gh cd /home/kino/
 map gc cd ~/Documents/
 map gt cd ~/Dotfiles/
 map gw cd ~/Downloads/

@@ -30,13 +30,21 @@ super + 4
 super + 5
 	flatpak run com.github.tchx84.Flatseal
 
+# screenshooter
+super + s
+	xfce4-screenshooter
+
 # open clipman popup
 super + c
-	xfce4-popup-clipman
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # open appfinder
 super + l
-	bspc rule -a \* -o state=floating rectangle=600x500+780+470 && xfce4-appfinder
+	rofi -combi-modi drun,run -display-combi "Run" -display-drun "" -display-run ""  -show combi
+
+# open powermenu
+super + p
+	rofi -show p -modi p:$HOME/Dotfiles/rofi/rofipower.sh
 
 # make sxhkd reload its configuration files:
 super + Escape

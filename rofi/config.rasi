@@ -1,0 +1,20 @@
+@theme "~/.config/rofi/nord.rasi"
+
+configuration {
+}
+
+mode-switcher {
+	enabled: true;
+	margin: 3px;
+}
+
+button selected {
+	text-color: @nord0;
+	background-color: @accent-color;
+}
+
+mainbox {
+	enabled: true;
+	children: ["inputbar","listview"];
+}
+
