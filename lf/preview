@@ -2,6 +2,7 @@
 
 FILE="$1"
 CACHE=$(mktemp /tmp/thumbcache.XXXXX)
+
 #########################
 ## Handle by extension ##
 #########################
@@ -13,7 +14,8 @@ case ${FILE##*.} in
 	7z)
 		7z l -p -- "$FILE" && exit ;;
 	pdf)
-		pdftoppm -png -f 1 -singlefile "$FILE" "$CACHE"; ~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1 ;;
+		pdftoppm -png -f 1 -singlefile "$FILE" "$CACHE"
+		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1 ;;
 	torrent)
 		transmission-show -- "$FILE" && exit ;;
 	odt|ods|odp|sxw)
@@ -29,8 +31,12 @@ case "$(file -Lb --mime-type -- "$FILE")" in
 		bat --style=plain --paging=never --color=always "$FILE" && exit ;;
 	image/*)
 		~/.config/lf/image draw "$FILE" "$2" "$3" "$4" "$5" && exit 1 ;;
-	video/*|audio/*|application/octet-stream)
-		mediainfo "$FILE" && exit ;;
+	video/*)
+		ffmpeg -y -ss 00:00:10.000 -i "$FILE" -vframes 1 "$CACHE.png"
+		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1 ;;
+	audio/*|application/octet-stream)
+		file -L -- "$FILE" | cut -d '/' -f 7,8
+		ffprobe -show_entries format=size,duration -of flat -pretty -i "$FILE" && exit ;;
 	*) ;; 
 esac
 
@@ -38,4 +44,4 @@ esac
 ## None of above exits, this is the fall back ##
 ################################################
 echo '----- File Type Classification -----'
-file --dereference --brief -- "$FILE"
+file -L -- "$FILE"
