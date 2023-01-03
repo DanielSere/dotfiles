@@ -36,15 +36,22 @@ super + s
 
 # open clipman popup
 super + c
-	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+	rofi -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard -run-command '{cmd}'
 
+# opem emojimenu
+super + e
+	rofi -modi emoji -show emoji -display-emoji Emoji
 # open appfinder
 super + l
 	rofi -combi-modi drun,run -display-combi "Run" -display-drun "" -display-run ""  -show combi
 
 # open powermenu
 super + p
-	rofi -show p -modi p:$HOME/Dotfiles/rofi/rofipower.sh
+	bash ~/.config/rofi/powermenu.sh
+
+# open wifimenu
+super + w
+	bash ~/.config/rofi/wifimenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
