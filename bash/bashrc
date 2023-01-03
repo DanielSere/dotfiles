@@ -41,7 +41,7 @@ alias fff='sudo vpm info'
 # Power commands
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
-alias logout='(sleep 1; pkill -KILL -u kino) & bspc quit'
+alias logout='((sleep 1; pkill -KILL -u kino) & bspc quit)'
 # Commands
 alias sudoers='sudo nvim /etc/sudoers.d/wheel'
 alias edit-grub='sudo nvim /etc/default/grub'
