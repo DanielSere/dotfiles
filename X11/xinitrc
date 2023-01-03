@@ -6,7 +6,7 @@ fi
 
 # compositor
 picom &
-greenclip daemon &
+~/.config/rofi/clipmenu daemon &
 xbacklight -set 50 &
 xsetroot -cursor_name left_ptr &
 redshift  -c ~/.config/redshift/config &
