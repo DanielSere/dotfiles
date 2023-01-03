@@ -24,7 +24,7 @@ set.guicursor = "a:hor100-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
 set.tabstop = 2
 set.shiftwidth = 2
 set.syntax = "enable"
-set.scrolloff = 15
+set.scrolloff = 25
 -- vim.cmd([[set list listchars=tab:\▎\ ]])
 set.background = 'dark'
 -- vim.cmd('colorscheme PaperColor')
