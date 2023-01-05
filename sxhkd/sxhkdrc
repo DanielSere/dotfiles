@@ -49,6 +49,14 @@ super + l
 super + p
 	bash ~/.config/rofi/powermenu.sh
 
+# open cmus
+super + m
+	kitty -e cmus
+
+# toggle hide-show
+super + h
+	hideshow.sh
+
 # open wifimenu
 super + w
 	bash ~/.config/rofi/wifimenu.sh
