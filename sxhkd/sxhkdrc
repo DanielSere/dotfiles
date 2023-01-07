@@ -7,7 +7,7 @@ super + Return
 	tilix
 
 # floating terminal
-super + grave
+super + alt + Return
 	bspc rule -a \* -o state=floating && tilix
 
 # browser
@@ -49,17 +49,13 @@ super + l
 super + p
 	bash ~/.config/rofi/powermenu.sh
 
+# open nmtui
+super + n
+	bspc rule -a \* -o state=floating && tilix -e nmtui
+
 # open cmus
 super + m
-	kitty -e cmus
-
-# toggle hide-show
-super + h
-	hideshow.sh
-
-# open wifimenu
-super + w
-	bash ~/.config/rofi/wifimenu.sh
+	tilix -e cmus
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -92,6 +88,10 @@ super + k
 # toggle fullscreen
 super + f
 	bspc node --state ~fullscreen
+
+# toggle hide-show
+super + h
+	hideshow.sh
 
 # change windows focus
 super + alt + { Left, Down, Up, Right, Next, Prior }

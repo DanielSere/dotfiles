@@ -3,31 +3,31 @@
 -- ##                                      Setting Options                                       ##
 -- ################################################################################################
 -- ################################################################################################
-local set = vim.opt
-set.hlsearch = false
-set.number = true
-set.mouse = 'a'
-set.undofile = true
-set.ignorecase = true
-set.smartcase = true
-set.timeoutlen = 500
-set.signcolumn = 'number'
-set.completeopt = 'menuone,noselect'
-set.termguicolors = true
-set.numberwidth = 1
-set.wrap = true
-set.clipboard = "unnamed,unnamedplus"
-set.swapfile = false
-set.cursorline = true
-set.cursorcolumn = true
-set.guicursor = "a:hor100-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
-set.tabstop = 2
-set.shiftwidth = 2
-set.syntax = "enable"
-set.scrolloff = 25
--- vim.cmd([[set list listchars=tab:\▎\ ]])
-set.background = 'dark'
--- vim.cmd('colorscheme PaperColor')
+vim.opt.hlsearch = false
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.mouse = 'a'
+vim.opt.undofile = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.timeoutlen = 500
+vim.opt.signcolumn = 'number'
+vim.opt.completeopt = 'menuone,noselect'
+vim.opt.termguicolors = true
+vim.opt.numberwidth = 2
+vim.opt.wrap = false
+vim.opt.clipboard = "unnamedplus"
+vim.opt.swapfile = false
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+vim.opt.guicursor = "a:hor100"
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.smartindent = true
+vim.opt.scrolloff = 10
 
-require('onedark').setup { style = 'deep' } --  dark, darker, cool, deep, warm, warmer, light
-require('onedark').load()
+-- [[ Theme ]] --
+vim.opt.background = 'dark'
+vim.g.onedark_config = { style = 'deep' }
+vim.cmd('colorscheme onedark')

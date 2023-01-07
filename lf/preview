@@ -45,3 +45,4 @@ esac
 ################################################
 echo '----- File Type Classification -----'
 file -L -- "$FILE"
+

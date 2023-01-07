@@ -4,7 +4,15 @@ error_symbol = "[>](bold red)"
 vimcmd_symbol = "[<](bold green)"
 
 [battery]
+<<<<<<< Updated upstream
 disabled = true
+=======
+full_symbol = ''
+charging_symbol = ''
+discharging_symbol = ''
+[[battery.display]]
+threshold = -1
+>>>>>>> Stashed changes
 
 [git_commit]
 tag_symbol = " tag "

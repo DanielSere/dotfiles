@@ -23,9 +23,9 @@ require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 	-- themes
 	use 'navarasu/onedark.nvim' -- onedark
-	use 'tomasiser/vim-code-dark'--codedark
-	use 'sainnhe/everforest'--everforest
-	use 'NLKNguyen/papercolor-theme'--papercolor
+	-- use 'tomasiser/vim-code-dark'-- codedark
+	-- use 'sainnhe/everforest'-- everforest
+	-- use 'ray-x/aurora' -- aurora
 	-- completion plugins
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
