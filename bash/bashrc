@@ -50,7 +50,7 @@ alias polybar='pkill polybar; sleep 1; polybar -q main -c /home/kino/.config/pol
 alias xdgninja='~/.bin/xdg-ninja/xdg-ninja.sh'
 alias lf='~/.config/lf/lf || ~/.config/lf/lf'
 alias ssh-gen='ssh-keygen -t rsa -b 4069 -C'
-alias ftprn8p='lftp 192.168.0.2:3000 -u kino'
+alias ftp5871='lftp kino@192.168.58.71:2121'
 alias bat='bat --style=plain --paging=never --color=always'
 # Apps
 alias screenshot='xfce4-screenshooter &'
