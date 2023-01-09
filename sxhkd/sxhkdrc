@@ -11,24 +11,12 @@ super + alt + Return
 	bspc rule -a \* -o state=floating && tilix
 
 # browser
-super + 1
+super + w
 	flatpak run io.gitlab.librewolf-community
 
-# vscodium
-super + 2
-	((sleep 5 ; rm -rf ~/.pki/ ~/.vscode-oss/) & ~/.bin/vscodium/bin/codium --user-data-dir ~/.config/VSCodium/ --extensions-dir ~/.config/VSCodium/extensions/)
-
 # file manager
-super + 3
+super + t
 	thunar
-
-# archiver
-super + 4
-	flatpak run io.github.peazip.Peazip
-
-# flatpaks manager
-super + 5
-	flatpak run com.github.tchx84.Flatseal
 
 # screenshooter
 super + s
