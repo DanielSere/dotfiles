@@ -20,6 +20,8 @@ case ${FILE##*.} in
 		transmission-show -- "$FILE" && exit ;;
 	odt|ods|odp|sxw)
 		odt2txt "$FILE" && exit ;;
+	svg)
+		bat --style=plain --paging=never --color=always "$FILE" && exit ;;
 	*) ;; 
 esac
 
