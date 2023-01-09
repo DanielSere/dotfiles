@@ -1,26 +1,11 @@
 #!/bin/bash
 
-MENU="Lock\nSuspend\nLogout\nReboot\nShutdown"
+MENU="Fullscreen\nTiled\nPseudoTiled\nFloating\nMonocle"
 
 case "$(echo -e $MENU | rofi -dmenu -p 'Power Menu')" in 
-	Suspend)  loginctl suspend ;;
-	Lock)     lock.sh ;;
-	Logout)   logout.sh ;;
-	Reboot)   loginctl reboot ;;
-	Shutdown) loginctl poweroff ;;
+	Fullscreen)  bspc node --state ~fullscreen ;;
+	Tiled)       bspc node --state ~tiled ;;
+	PseudoTiled) bspc node --state ~pseudo_tiled ;;
+	Floating)    bspc node --state ~floating ;;
+	Monocle)     bspc desktop --layout next ;;
 esac
-
-WINDOW STATES
-       tiled
-           Its size and position are determined by the window tree.
-
-       pseudo_tiled
-           A tiled window that automatically shrinks but doesn’t stretch
-           beyond its floating size.
-
-       floating
-           Can be moved/resized freely. Although it doesn’t use any tiling
-           space, it is still part of the window tree.
-
-       fullscreen
-           Fills its monitor rectangle and has no borders.
