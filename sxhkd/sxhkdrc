@@ -10,18 +10,6 @@ super + Return
 super + alt + Return
 	bspc rule -a \* -o state=floating && tilix
 
-# browser
-super + w
-	flatpak run io.gitlab.librewolf-community
-
-# file manager
-super + t
-	thunar
-
-# screenshooter
-super + s
-	xfce4-screenshooter
-
 # open clipman popup
 super + c
 	rofi -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard -run-command '{cmd}'
@@ -30,7 +18,7 @@ super + c
 super + e
 	rofi -modi emoji -show emoji -display-emoji Emoji
 # open appfinder
-super + l
+super + @Menu
 	rofi -combi-modi drun,run -display-combi "Run" -display-drun "" -display-run ""  -show combi
 
 # open powermenu
@@ -44,6 +32,14 @@ super + n
 # open cmus
 super + m
 	tilix -e cmus
+
+# screenshooter
+super + s
+	xfce4-screenshooter
+
+# open window state menu
+super + w
+	bash ~/.config/rofi/windowmenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
