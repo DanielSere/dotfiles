@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
+	eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+# X apps
+xset -dpms s 0 0 &
+xsetroot -cursor_name left_ptr &
+xbindkeys -f /home/kino/.config/x11/xbindkeysrc &
+xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
+# compositor
+picom &
+# clipboard maanger
+clipmenu daemon &
+# light temp
+redshift  -c ~/.config/redshift/config &
+# status bar
+polybar -q main -c /home/kino/.config/polybar/config.ini &
+# window manager
+exec bspwm
