@@ -1,9 +1,11 @@
 #!/bin/bash
 
-MENU="Shutdown\nReboot\nLogout"
+MENU="Lock\nSuspend\nLogout\nReboot\nShutdown"
 
-DIALOG_RESULT=$(echo -e $MENU | rofi -dmenu -p "Power Menu")
-
-[ "$DIALOG_RESULT" = "Reboot" ]   && sudo reboot
-[ "$DIALOG_RESULT" = "Logout" ]   && ((sleep 1; pkill -KILL -u kino) & bspc quit)
-[ "$DIALOG_RESULT" = "Shutdown" ] && sudo poweroff
+case "$(echo -e $MENU | rofi -dmenu -p 'Power Menu')" in 
+	Suspend)  loginctl suspend ;;
+	Lock)     lock.sh ;;
+	Logout)   logout.sh ;;
+	Reboot)   loginctl reboot ;;
+	Shutdown) loginctl poweroff ;;
+esac
