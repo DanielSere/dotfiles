@@ -23,9 +23,6 @@ require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 	-- themes
 	use 'navarasu/onedark.nvim' -- onedark
-	-- use 'tomasiser/vim-code-dark'-- codedark
-	-- use 'sainnhe/everforest'-- everforest
-	-- use 'ray-x/aurora' -- aurora
 	-- completion plugins
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
@@ -34,8 +31,8 @@ require('packer').startup(function(use)
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/cmp-path'
 	-- telescope plugins
-	use 'nvim-telescope/telescope-file-browser.nvim'
 	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
+	use 'nvim-telescope/telescope-file-browser.nvim'
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	-- other plugins
 	use 'nvim-lualine/lualine.nvim'
@@ -43,4 +40,7 @@ require('packer').startup(function(use)
 	use 'folke/which-key.nvim'
 	use 'numToStr/Comment.nvim'
 	use 'nvim-lua/plenary.nvim'
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+		require("toggleterm").setup()
+	end}
 end)
