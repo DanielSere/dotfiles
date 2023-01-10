@@ -26,10 +26,11 @@ require('packer').startup(function(use)
 	-- completion plugins
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
+	use 'dcampos/nvim-snippy'
+	use 'dcampos/cmp-snippy'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/cmp-path'
+	use 'David-Kunz/cmp-npm'
 	-- telescope plugins
 	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
 	use 'nvim-telescope/telescope-file-browser.nvim'
