@@ -22,7 +22,7 @@ local on_attach = function(_, bufnr)
 	map('n', '<leader>ld', vlb.declaration, { buffer = bufnr, desc = 'Goto Declaration' })
 	map('n', '<leader>lh', vlb.hover, { buffer = bufnr, desc = 'Hover Documentation' })
 	map('n', '<leader>ls', vlb.signature_help, { buffer = bufnr, desc = 'Signature Documentation' })
-	map('n', '<leader>lf', vlb.formatting, { buffer = bufnr, desc = 'Format Buffer' })
+	map('n', '<leader>lf', vlb.format, { buffer = bufnr, desc = 'Format Buffer' })
 end
 
 -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
