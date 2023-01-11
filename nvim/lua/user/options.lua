@@ -30,4 +30,4 @@ vim.opt.scrolloff = 10
 -- [[ Theme ]] --
 vim.opt.background = 'dark'
 vim.g.onedark_config = { style = 'deep' }
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme xresources')
