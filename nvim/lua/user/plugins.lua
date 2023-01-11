@@ -23,6 +23,7 @@ require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 	-- themes
 	use 'navarasu/onedark.nvim' -- onedark
+	use 'nekonako/xresources-nvim'
 	-- completion plugins
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
