@@ -7,6 +7,7 @@ fi
 # X apps
 xset -dpms s 0 0 &
 xsetroot -cursor_name left_ptr &
+xrdb -load ~/.config/x11/xresources &
 xbindkeys -f /home/kino/.config/x11/xbindkeysrc &
 xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
 # compositor
