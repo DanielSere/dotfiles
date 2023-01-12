@@ -23,7 +23,8 @@ require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 	-- themes
 	use 'navarasu/onedark.nvim' -- onedark
-	use 'nekonako/xresources-nvim'
+	use 'mhartington/oceanic-next' -- OceanicNext
+	use 'morhetz/gruvbox' -- gruvbox
 	-- completion plugins
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
@@ -36,6 +37,8 @@ require('packer').startup(function(use)
 	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
 	use 'nvim-telescope/telescope-file-browser.nvim'
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	-- show colors
+	use 'norcalli/nvim-colorizer.lua'
 	-- other plugins
 	use 'nvim-lualine/lualine.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
