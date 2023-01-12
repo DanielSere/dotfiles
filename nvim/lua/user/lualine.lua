@@ -98,13 +98,13 @@ require('lualine').setup {
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { branch, diff, diagnostics },
-		lualine_c = { filename },
+		lualine_b = { branch, diagnostics },
+		lualine_c = { filename, diff },
 		lualine_x = { 'filetype' },
 		lualine_y = { lspclient },
 		lualine_z = { location, progress },
 	},
 	tabline = {
-		lualine_a = {buffers}
+		lualine_a = { buffers }
 	},
 }
