@@ -22,9 +22,15 @@ require('packer').startup(function(use)
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig.nvim'
 	-- themes
-	use 'navarasu/onedark.nvim' -- onedark
-	use 'mhartington/oceanic-next' -- OceanicNext
-	use 'morhetz/gruvbox' -- gruvbox
+	use 'navarasu/onedark.nvim'
+	use 'mhartington/oceanic-next'
+	use 'morhetz/gruvbox'
+	use 'ray-x/aurora'
+	use 'embark-theme/vim'
+	use 'wdhg/dragon-energy'
+	use 'kadekillary/skull-vim'
+	use 'rebelot/kanagawa.nvim'
+	use 'sainnhe/everforest'
 	-- completion plugins
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
