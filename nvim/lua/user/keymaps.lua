@@ -15,10 +15,9 @@ map('n', '<C-q>', ':q!<cr>', { desc = 'Force Quit' })
 map('n', '<C-z>', ':wq<cr>', { desc = 'Write and Quit' })
 map('n', '<leader>fn', ':enew<cr>', { desc = 'New File' })
 
-map('n', '<leader>tt', ':TermExec direction=float dir=pwd <cr>', { desc = 'Terminal' })
--- map('n', '<leader>tc', ':bd!<cr>', { desc = 'Close Terminal' })
-map('n', '<leader>tl', ':TermExec direction=float dir=pwd cmd=lazygit;exit <cr>', {desc = 'Lazygit'})
--- map('t', '<esc>', '<C-\\><C-n>', {desc = 'Return to Normal'})
+map('n', '<leader>tt', ':TermExec direction=float dir=pwd <cr>', { desc = 'terminal' })
+map('n', '<leader>tl', ':TermExec direction=float dir=pwd cmd=lazygit;exit <cr>', {desc = 'lazygit'})
+map('n', '<leader>tf', ':TermExec direction=float dir=pwd cmd=lf;exit <cr>', {desc = 'lf'})
 
 map('n', '<leader>pc', ':PackerCompile <cr>', { desc = 'Packer Compile' })
 map('n', '<leader>pi', ':PackerInstall <cr>', { desc = 'Packer Install' })
