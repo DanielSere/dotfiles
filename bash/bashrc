@@ -60,6 +60,8 @@ alias bulkr='thunar -B'
 alias ll='lsd -la'
 alias ls='lsd -l'
 alias cl='clear'
-alias rm='rm -rfv'
+alias rm='rm -rf'
 alias xx='exit'
 alias ..='cd ..'
+
+rm ~/Desktop
