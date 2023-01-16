@@ -50,7 +50,7 @@ local location = {
 local buffers = {
 	'buffers',
 	buffers_color = {
-		active = {bg = 'lualine_b_normal', fg = '#F2CE00'},
+		active = {bg = 'lualine_b_normal', fg = '#ff9e3b'},
 		inactive = 'lualine_c_normal',
 	},
 	mode = 0,
@@ -98,8 +98,8 @@ require('lualine').setup {
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { branch, diagnostics },
-		lualine_c = { filename, diff },
+		lualine_b = { branch, diff, diagnostics },
+		lualine_c = { filename },
 		lualine_x = { 'filetype' },
 		lualine_y = { lspclient },
 		lualine_z = { location, progress },

@@ -12,5 +12,8 @@ require 'user.which-key'
 require 'user.telescope'
 require 'user.colorizer'
 require 'user.lualine'
+require 'user.toggleterm'
+
+
 --[[ Modeline ]]
 -- vim: ts=4 sw=4 sts=4 noet

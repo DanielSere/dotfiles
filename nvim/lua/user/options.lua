@@ -12,7 +12,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.timeoutlen = 500
 vim.opt.signcolumn = 'no'
-vim.opt.completeopt = 'menuone,noselect'
+ -- vim.opt.completeopt = 'menu,menuone,noinsert'
 vim.opt.numberwidth = 1
 vim.opt.wrap = false
 vim.opt.clipboard = "unnamedplus"
@@ -29,7 +29,7 @@ vim.opt.scrolloff = 10
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 vim.g.onedark_config = { style = 'deep' }
-vim.cmd('colorscheme OceanicNext') -- onedark OceanicNext gruvbox aurora embark dragon-energy skull kanagawa everforest
+vim.cmd('colorscheme kanagawa') -- onedark OceanicNext gruvbox aurora embark dragon-energy skull kanagawa everforest
 
 
 

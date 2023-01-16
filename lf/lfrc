@@ -13,6 +13,10 @@ set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 set shell sh
 ##############
+## Commands ##
+##############
+cmd dragon %dragon-drop -a -x $fx
+##############
 ## Bindings ##
 ##############
 # Remove some defaults
@@ -25,21 +29,21 @@ map d
 map c
 map e
 map f
-map s
-map gg
 # Basics
-map d push %mkdir<space>
-map f push %touch<space>
-map D delete
-map c copy
-map C clear
-map p paste
-map x cut
-map r rename
-map s toggle
-map S invert
-map u unselect
+map md push %mkdir<space>
+map mf push %touch<space>
+map dr dragon
+map dd delete
+map cc copy
+map cl clear
+map pp paste
+map xx cut
+map rr rename
+map ss toggle
+map si invert
+map sx unselect
 map . set hidden!
+map <enter> open
 map o $$EDITOR "$f"
 # Movement
 map gh cd /home/kino/

@@ -8,43 +8,42 @@ CACHE=$(mktemp /tmp/thumbcache.XXXXX)
 #########################
 case ${FILE##*.} in
 	a|ace|alz|apk|arc|arj|bz|bz2|cab|cpio|deb|gz|iso|jar|lha|lz|lzh|lzma|lzo|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip|zst)
-		tar -tvf "$FILE" && exit ;;
+		tar -tvf "$FILE" && exit 1;;
 	rar|cbr)
-		unrar l "$FILE" && exit ;;
+		unrar l "$FILE" && exit 1;;
 	7z)
-		7z l -p -- "$FILE" && exit ;;
-	pdf)
-		pdftoppm -png -f 1 -singlefile "$FILE" "$CACHE"
-		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1 ;;
-	torrent)
-		transmission-show -- "$FILE" && exit ;;
-	odt|ods|odp|sxw)
-		odt2txt "$FILE" && exit ;;
-	svg)
-		bat --style=plain --paging=never --color=always "$FILE" && exit ;;
+		7z l -p -- "$FILE" && exit 1;;
 	*) ;; 
 esac
-
 ##########################
 ## Handle by mime types ##
 ##########################
 case "$(file -Lb --mime-type -- "$FILE")" in
 	text/*|*/xml|*/csv|*/json)
-		bat --style=plain --paging=never --color=always "$FILE" && exit ;;
+		bat --style=plain --paging=never --color=always "$FILE" && exit 1;;
+	image/svg*)
+		magick convert "$FILE" -resize 100% "$CACHE.png"
+		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1;;
 	image/*)
-		~/.config/lf/image draw "$FILE" "$2" "$3" "$4" "$5" && exit 1 ;;
+		~/.config/lf/image draw "$FILE" "$2" "$3" "$4" "$5" "$6" && exit 1;;
 	video/*)
 		ffmpeg -y -ss 00:00:10.000 -i "$FILE" -vframes 1 "$CACHE.png"
-		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1 ;;
-	audio/*|application/octet-stream)
-		file -L -- "$FILE" | cut -d '/' -f 7,8
-		ffprobe -show_entries format=size,duration -of flat -pretty -i "$FILE" && exit ;;
+		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1;;
+	audio/*)
+		exiftool "$FILE" && exit 1;;
+	application/octet-stream)
+		file -b -- "$FILE" && exit 1;;
+	application/vnd.oasis*)
+		odt2txt "$FILE" && exit 1;;
+	application/pdf)
+		pdftoppm -png -f 1 -singlefile "$FILE" "$CACHE"
+		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1;;
+
 	*) ;; 
 esac
-
 ################################################
 ## None of above exits, this is the fall back ##
 ################################################
 echo '----- File Type Classification -----'
-file -L -- "$FILE"
+file -b -- "$FILE" && exit 1;;
 

@@ -1,0 +1,31 @@
+{
+  "name": "Onedark",
+  "comment": "a theme",
+  "foreground-color": "#abb2bf",
+  "background-color": "#282c34",
+  "use-theme-colors": false,
+  "use-highlight-color": false,
+  "use-cursor-color": false,
+  "cursor-foreground-color": "#ffffff",
+  "cursor-background-color": "#efefef",
+  "use-badge-color": true,
+  "badge-color": "#ac7ea8",
+  "palette": [
+    "#282c34",
+    "#e06c75",
+    "#98c379",
+    "#e5c07b",
+    "#61afef",
+    "#c678dd",
+    "#56b6c2",
+    "#abb2bf",
+    "#545862",
+    "#e06c75",
+    "#98c379",
+    "#e5c07b",
+    "#61afef",
+    "#c678dd",
+    "#56b6c2",
+    "#c8ccd4"
+  ]
+}

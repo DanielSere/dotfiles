@@ -10,7 +10,6 @@ local servers = { 'pylsp' }
 
 require('mason').setup()
 require('mason-lspconfig').setup { ensure_installed = servers }
-
 -- ################################################################################################
 -- ################################################################################################
 -- ##                                          LSP Setup                                         ##
@@ -25,7 +24,6 @@ local on_attach = function(_, bufnr)
 	map('n', '<leader>lf', vlb.format, { buffer = bufnr, desc = 'Format Buffer' })
 end
 
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, lsp in ipairs(servers) do
@@ -50,8 +48,8 @@ require('lspconfig').sumneko_lua.setup {
 		Lua = {
 			format = {
 				enable = true,
-    		defaultConfig = {
-      		indent_style = 'tab',
+				defaultConfig = {
+					indent_style = 'tab',
 					tab_width = 2,
 				},
 			},
@@ -62,11 +60,11 @@ require('lspconfig').sumneko_lua.setup {
 			diagnostics = {
 				globals = { 'vim' },
 			},
-			-- workspace = { library = vim.api.nvim_get_runtime_file('', true) },
 			telemetry = { enable = false, },
 		},
 	},
 }
+
 require('lspconfig').pylsp.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -86,9 +84,48 @@ require('lspconfig').pylsp.setup {
 		},
 	},
 }
-require('lspconfig').gopls.setup {}
-require('lspconfig').html.setup {}
-require('lspconfig').cssls.setup {}
-require('lspconfig').tsserver.setup {}
-require('lspconfig').marksman.setup {}
-require('lspconfig').bashls.setup {}
+
+require('lspconfig').gopls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').html.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').cssls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').tsserver.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	handlers = {
+		["textDocument/publishDiagnostics"] = function(_, params, client_id, config)
+			if params.diagnostics ~= nil then
+				local idx = 1
+				while idx <= #params.diagnostics do
+					if params.diagnostics[idx].code == 80001 then
+						table.remove(params.diagnostics, idx)
+					else
+						idx = idx + 1
+					end
+				end
+			end
+			vim.lsp.diagnostic.on_publish_diagnostics(_, params, client_id, config)
+		end,
+	},
+}
+
+require('lspconfig').marksman.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').bashls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}

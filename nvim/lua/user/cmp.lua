@@ -3,34 +3,33 @@
 -- ##                                             CMP Setup                                      ##
 -- ################################################################################################
 -- ################################################################################################
-
 local cmp = require 'cmp'
 local kind_icons = {
-	Text = '  ',
-	Method = '  ',
-	Function = '  ',
-	Constructor = '  ',
-	Field = '  ',
-	Variable = '  ',
-	Class = '  ',
-	Interface = '  ',
-	Module = '  ',
-	Property = '  ',
-	Unit = '  ',
-	Value = '  ',
-	Enum = '  ',
-	Keyword = '  ',
-	Snippet = '  ',
-	Color = '  ',
-	File = '  ',
-	Reference = '  ',
-	Folder = '  ',
-	EnumMember = '  ',
-	Constant = '  ',
-	Struct = '  ',
-	Event = '  ',
-	Operator = '  ',
-	TypeParameter = '  ',
+	Text = '',
+	Method = '',
+	Function = '',
+	Constructor = '',
+	Field = '',
+	Variable = '',
+	Class = '',
+	Interface = '',
+	Module = ' ',
+	Property = '',
+	Unit = '',
+	Value = '',
+	Enum = '',
+	Keyword = '',
+	Snippet = '',
+	Color = '',
+	File = '',
+	Reference = '',
+	Folder = '',
+	EnumMember = '',
+	Constant = '',
+	Struct = '',
+	Event = '',
+	Operator = '',
+	TypeParameter = '',
 }
 
 cmp.setup {
@@ -46,15 +45,19 @@ cmp.setup {
 		['<CR>'] = cmp.mapping.confirm({ select = false }),
 	},
 	sources = {
+		{ name = 'snippy' },
 		{ name = 'nvim_lsp' },
 		{ name = 'path' },
-		{ name = 'snippy' },
 		{ name = 'npm' },
 	},
 	formatting = {
-		fields = { 'abbr', 'kind' },
-		format = function(_ , vim_item)
+		fields = { 'abbr', 'kind' , 'menu'},
+		format = function(entry, vim_item)
 			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+			vim_item.menu = "(" .. entry.source.name .. ")"
+			if entry.source.name == "nvim_lsp" then
+				vim_item.dup = 0
+			end
 			return vim_item
 		end
 	},
