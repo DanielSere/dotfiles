@@ -40,5 +40,7 @@ export BROWSER='flatpak run io.gitlab.librewolf-community'
 
 export LF_ICONS="$(tr '\n' ':' <~/.config/lf/icons)"
 
+export COLORTEMP='0'
+
 # Start X
 clear ; startx -x %XINITRC -- vt1 &> /dev/null

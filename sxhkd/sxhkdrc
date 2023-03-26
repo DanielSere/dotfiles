@@ -21,9 +21,17 @@ super + e
 super + @Menu
 	rofi -combi-modi drun,run -display-combi "Run" -display-drun "" -display-run ""  -show combi
 
+# open libreoffice
+super + o
+	libreoffice
+
 # open powermenu
 super + p
 	bash ~/.config/rofi/powermenu.sh
+
+# open launcher
+super + l
+	bash ~/.config/rofi/launcher.sh
 
 # open nmtui
 super + n
@@ -37,8 +45,12 @@ super + m
 super + s
 	xfce4-screenshooter
 
-# open window state menu
+# web browser
 super + w
+	librewolf
+
+# open window state menu
+super + W
 	bash ~/.config/rofi/windowmenu.sh
 
 # make sxhkd reload its configuration files:

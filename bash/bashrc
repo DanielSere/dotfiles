@@ -24,6 +24,12 @@ alias peazip='flatpak run io.github.peazip.Peazip &'
 alias flatseal='flatpak run com.github.tchx84.Flatseal &'
 alias mgba='flatpak run io.mgba.mGBA &'
 alias smplayer='flatpak run info.smplayer.SMPlayer'
+# Git
+alias gst='git status'
+alias gaa='git add .'
+alias gcm='git commit -m'
+alias gps='git push'
+alias gpl='git pull'
 # Python
 alias cvenv='python -m venv env'
 alias avenv='source env/bin/activate'
@@ -52,13 +58,13 @@ alias lf='~/.config/lf/lf || ~/.config/lf/lf'
 alias ssh-gen='ssh-keygen -t rsa -b 4069 -C'
 alias ftp5871='lftp kino@192.168.58.71:2121'
 alias bat='bat --style=plain --paging=never --color=always'
-alias pfe='pfetch'
+alias clpfe='clear;pfetch'
 # Apps
 alias screenshot='xfce4-screenshooter &'
 alias codium='(sleep 5 ; rm -rf ~/.pki/ ~/.vscode-oss/) & ~/.bin/vscodium/bin/codium --user-data-dir ~/.config/VSCodium/ --extensions-dir ~/.config/VSCodium/extensions/'
 alias bulkr='thunar -B'
 # Basics
-alias ll='lsd -la'
+alias la='lsd -la'
 alias ls='lsd -l'
 alias cl='clear'
 alias rm='rm -rf'
@@ -66,3 +72,5 @@ alias xx='exit'
 alias ..='cd ..'
 
 rm ~/Desktop
+rm ~/.thumbnails
+
