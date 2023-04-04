@@ -59,6 +59,7 @@ alias ssh-gen='ssh-keygen -t rsa -b 4069 -C'
 alias ftp5871='lftp kino@192.168.58.71:2121'
 alias bat='bat --style=plain --paging=never --color=always'
 alias clpfe='clear;pfetch'
+alias monerod='monerod --data-dir "$XDG_DATA_HOME"/bitmonero'
 # Apps
 alias screenshot='xfce4-screenshooter &'
 alias codium='(sleep 5 ; rm -rf ~/.pki/ ~/.vscode-oss/) & ~/.bin/vscodium/bin/codium --user-data-dir ~/.config/VSCodium/ --extensions-dir ~/.config/VSCodium/extensions/'

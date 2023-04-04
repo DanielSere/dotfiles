@@ -75,8 +75,14 @@ super + q
 
 # kill window
 super + k
- bspc node -k
+	bspc node -k
 
+#####################
+## Toggle touchpad ##
+#####################
+
+super + ctrl + Escape
+	touchpad_toggle.sh
 ###########
 ## focus ##
 ###########
