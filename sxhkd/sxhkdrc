@@ -10,59 +10,55 @@ super + Return
 super + alt + Return
 	bspc rule -a \* -o state=floating && tilix
 
+# open appfinder
+super + @Menu
+	rofi -combi-modi drun -display-combi "Run" -display-drun "" -show combi
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
 # open clipman popup
 super + c
-	rofi -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard -run-command '{cmd}'
+	rofi -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard -run-command '{cmd}' ; sleep 0.2; xdotool type $(xclip -o -selection clipboard)
 
 # opem emojimenu
 super + e
 	rofi -modi emoji -show emoji -display-emoji Emoji
-# open appfinder
-super + @Menu
-	rofi -combi-modi drun,run -display-combi "Run" -display-drun "" -display-run ""  -show combi
-
-# open libreoffice
-super + o
-	libreoffice
-
-# open powermenu
-super + p
-	bash ~/.config/rofi/powermenu.sh
 
 # open launcher
 super + l
 	bash ~/.config/rofi/launcher.sh
 
-# open nmtui
-super + n
-	bspc rule -a \* -o state=floating && tilix -e nmtui
-
 # open cmus
 super + m
 	tilix -e cmus
+
+# open nmtui
+super + n
+	~/.config/rofi/wifimenu.sh
+
+# open powermenu
+super + p
+	bash ~/.config/rofi/powermenu.sh
 
 # screenshooter
 super + s
 	xfce4-screenshooter
 
-# web browser
-super + w
-	librewolf
-
 # open window state menu
-super + W
+super + w
 	bash ~/.config/rofi/windowmenu.sh
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+super + ctrl + shift + n
+	echo -n 'Ññ' | xclip -selection clipboard ; sleep 0.2 ; xdotool type $(xclip -o -selection clipboard)
 
 ###################
 ## bspwm hotkeys ##
 ###################
 
 # quit bspwm
-super + alt + q
+super + Q
 	bspc quit
 
 # restart bspwm

@@ -43,15 +43,15 @@ window {
 
     location:   center;
     width:      600px;
-		height: 		426px;
+	height: 	424px;
     border:     1px;
 }
 
 inputbar {
     padding:    8px 12px;
     spacing:    12px;
-		border: 		1px solid;
-		border-color:	@accent-color;
+	border: 		1px solid;
+	border-color:	@accent-color;
     children:   [ prompt, entry ];
 }
 
@@ -66,9 +66,8 @@ prompt {
 listview {
     lines:      8;
     columns:    1;
-		border: 1px solid;
-		border-color: @accent-color;
-
+	border: 1px solid;
+	border-color: @accent-color;
     fixed-height:   false;
 }
 
