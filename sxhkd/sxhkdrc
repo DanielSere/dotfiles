@@ -4,15 +4,15 @@
 
 # terminal
 super + Return
-	tilix
+	kitty
 
 # floating terminal
 super + alt + Return
-	bspc rule -a \* -o state=floating && tilix
+	bspc rule -a \* -o state=floating && kitty
 
 # open appfinder
 super + @Menu
-	rofi -combi-modi drun -display-combi "Run" -display-drun "" -show combi
+	rofi -combi-modi drun -display-combi "Run:" -display-drun "" -show combi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -20,8 +20,7 @@ super + Escape
 
 # open clipman popup
 super + c
-	rofi -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard -run-command '{cmd}' ; sleep 0.2; xdotool type $(xclip -o -selection clipboard)
-
+	rofi -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard
 # opem emojimenu
 super + e
 	rofi -modi emoji -show emoji -display-emoji Emoji
@@ -32,7 +31,7 @@ super + l
 
 # open cmus
 super + m
-	tilix -e cmus
+	bash ~/.config/rofi/musicmenu.sh
 
 # open nmtui
 super + n

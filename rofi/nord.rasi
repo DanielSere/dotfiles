@@ -52,7 +52,7 @@ inputbar {
     spacing:    12px;
 	border: 		1px solid;
 	border-color:	@accent-color;
-    children:   [ prompt, entry ];
+    children:   [ prompt, entry ]; /* entry */
 }
 
 prompt, entry, element-text, element-icon {
@@ -61,6 +61,10 @@ prompt, entry, element-text, element-icon {
 
 prompt {
     text-color: @accent-color;
+}
+
+entry {
+	text-color: @text-color;
 }
 
 listview {

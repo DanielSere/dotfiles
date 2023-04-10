@@ -1,0 +1,88 @@
+add ~/Music
+update-cache 
+add Music/
+set start_view=tree
+set format_trackwin=%t%= %d 
+set format_playlist= %-21%a %t%= %d
+set format_playlist= %-21%a %t%=
+set format_current= %a - %n. %t%=
+set format_title=%a - %t (%y)
+set format_title=%a - %t
+set format_current= %a - %n. %t%= %y 
+set format_playlist= %-21%a %n. %t%= %d
+set format_playlist= %-21%a %n %t%= %d
+set format_playlist= %-21%a-%l %F%= %d
+set format_playlist= %-21%a %F%= %d
+set format_playlist= %-21%A %t%= %d
+set format_playlist= %-21%A %l %-5%t%= %d
+set format_playlist= %-21%A %l%t%= %d
+set format_playlist= %-21%A %l%= %t%= %d
+set format_playlist= %-21%A %t%= %d %l
+set format_playlist= %-20%a %t%= %d
+set format_playlist= %-50%a %t%= %d
+set format_playlist= %-21%a %t %d
+set format_playlist= %-21%a %t% %d
+set format_playlist=%-21%a %t%= %d
+set format_playlist=%-21%a %t%= %y %d
+add ~/Music/
+ 
+set format_playlist= %t%= %y %d
+add ~/music/
+add 
+set shuffle=true
+set play_sorted=false
+set play_library=false
+set format_playlist_va= %-21%A %t (%a)%= %y %d
+set format_playlist= %-21%a %t%= %y %d
+set play_sorted=true
+set format_current= %a - %n %t%= %y 
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=%{status}%=%{status}
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=%{status}
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%={status}
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=%{statu
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=
+QUIT
+Q
+q
+set show_remaining_time=false
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=%{?repeat_current?repeat current?%{?play_library?%{playlist_mode} from %{?play_sorted?sorted }library?playlist}} | %1{continue}%1{follow}%1{repeat}%1{shuffle} 
+set start_view=sorted
+view sorted
+help
+left-view 
+1
+set show_remaining_time=true
+set show_current_bitrate=true
+set format_playlist_va= %-21%A %t (%a)%= %y %d %{?X!=0?%3X ?    }
+set format_playlist= %-21%a %t%= %y %d %{?X!=0?%3X ?    }
+set mouse=true
+set lib_sort=albumartist tracknumber
+set format_trackwin_va=%t (%a)%= %y %d 
+set format_trackwin=%t%= %y %d 
+set lib_sort=albumartist album discnumber tracknumber title
+set lib_sort=albumartist date album discnumber tracknumber title filename play_count
+set aaa_mode=artist
+colorscheme zenburn
+colorscheme xterm-white
+colorscheme solarized-dark
+colorscheme night
+colorscheme groove_grove
+colorscheme jellybeans
+colorscheme illyria-light
+colorscheme illyria-dark
+colorscheme green
+colorscheme green-mono-88
+colorscheme gray-88
+colorscheme cyan
+set aaa_mode=all
+colorscheme gruvbox-alt
+colorscheme gruvbox_redux
+colorscheme gruvbox-night
+colorscheme gruvbox
+right-view 
+left-view
+bind -f common z player-prev
+colorscheme 
+set output_plugin=pulse
+add /home/kino/Music/

@@ -3,7 +3,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 # Set up starship
 eval "$(starship init bash)"
 
@@ -38,12 +37,12 @@ alias dvenv='deactivate'
 alias nodemon='npx nodemon'
 alias serve='npx serve -s'
 # XBPS
-alias iii='sudo vpm install'
-alias uuu='sudo vpm update'
-alias rrr='sudo vpm removerecursive'
-alias ccc='sudo vpm cleanup ; sudo vpm autoremove'
-alias sss='sudo vpm search'
-alias fff='sudo vpm info'
+alias xii='sudo vpm --color=yes install'
+alias xuu='sudo vpm --color=yes update'
+alias xrr='sudo vpm --color=yes removerecursive'
+alias xcc='sudo vpm --color=yes cleanup ; sudo vpm --color=yes autoremove'
+alias xss='vpm --color=yes search'
+alias xff='vpm --color=yes info'
 # Power commands
 alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'

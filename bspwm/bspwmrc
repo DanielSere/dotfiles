@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config border_width         1
+bspc config border_width         2
 bspc config window_gap           5
 
 bspc config split_ratio          0.5
@@ -13,5 +13,3 @@ bspc config gapless_monocle      false
 
 bspc config focused_border_color "#88c0d0"
 bspc config normal_border_color  "#b75154"
-
-bspc rule -a ddgtk state=tiled

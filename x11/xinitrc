@@ -18,7 +18,6 @@ clipmenu daemon &
 redshift  -c ~/.config/redshift/config &
 # status bar
 polybar -q main -c /home/kino/.config/polybar/config.ini &
-# touchpad gestures
-touchegg --daemon &
+mpd &
 # window manager
 exec bspwm

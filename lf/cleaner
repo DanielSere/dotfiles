@@ -2,5 +2,5 @@
 
 case "clear" in
 	clear|*)
-		echo "action	remove	identifier	preview" > "$FIFO_UEBERZUG" ;;
+		kitty +kitten icat --clear --stdin no --silent --transfer-mode file < /dev/null > /dev/tty && exit 1;;
 esac
