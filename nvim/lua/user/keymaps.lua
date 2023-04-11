@@ -44,3 +44,6 @@ map('n', '<leader>d', tb.diagnostics, { desc = 'Diagnostics' })
 map('n', '<leader>m', ':Mason<cr>', {desc = 'Mason'})
 
 map('n', '<leader>b', ':Telescope buffers<cr>', {desc = 'Buffers'})
+
+map('n', '/c', ':nohlsearch<cr>', {desc = 'Clear search highlight'})
+map('n', '//', '/', {desc = 'Search pattern'})

@@ -6,10 +6,10 @@
 require('Comment').setup {
 	toggler = {
 		line = '<leader>cl',
-		block = '__1',
+		block = '<leader>cB',
 	},
 	opleader = {
-		line = '__2',
+		line = '<leader>cL',
 		block = '<leader>cb',
 	},
 	extra = {

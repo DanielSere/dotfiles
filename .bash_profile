@@ -5,11 +5,6 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-##########
-## Path ##
-##########
-export PATH=$HOME/.local/bin:$PATH
-
 #########
 ## XDG ##
 #########
@@ -59,8 +54,14 @@ export PYTHONSTARTUP=/etc/python/pythonrc
 export LF_ICONS="$(tr '\n' ':' <~/.config/lf/icons)"
 export COLORTEMP='0'
 
+##########
+## Path ##
+##########
+export PATH="$HOME/.local/bin:$CARGO_HOME/bin:$PATH"
+
 #############
 ## Start X ##
 #############
 clear ; startx -x $XINITRC -- vt1 &> /dev/null
-. "$CARGO_HOME/env"
+
+

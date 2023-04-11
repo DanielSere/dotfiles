@@ -6,7 +6,7 @@
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-	vim.cmd [[packadd packer.nvim]]
+	vim.cmd.packadd('packer.nvim')
 end
 
 require('packer').startup(function(use)
@@ -38,6 +38,7 @@ require('packer').startup(function(use)
 	use 'dcampos/cmp-snippy'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-buffer'
 	use 'David-Kunz/cmp-npm'
 	-- telescope plugins
 	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }

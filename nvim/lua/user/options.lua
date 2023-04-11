@@ -3,7 +3,7 @@
 -- ##                                      Setting Options                                       ##
 -- ################################################################################################
 -- ################################################################################################
-vim.opt.hlsearch = false
+-- vim.opt.hlsearch = 
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
@@ -29,7 +29,7 @@ vim.opt.scrolloff = 10
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 vim.g.onedark_config = { style = 'deep' }
-vim.cmd('colorscheme kanagawa') -- onedark OceanicNext gruvbox aurora embark dragon-energy skull kanagawa everforest
+vim.cmd.colorscheme('kanagawa') -- onedark OceanicNext gruvbox aurora embark dragon-energy skull kanagawa everforest
 
 
 

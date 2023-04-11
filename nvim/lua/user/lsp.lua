@@ -41,7 +41,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -85,21 +85,6 @@ require('lspconfig').pylsp.setup {
 	},
 }
 
-require('lspconfig').gopls.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
-}
-
-require('lspconfig').html.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
-}
-
-require('lspconfig').cssls.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
-}
-
 require('lspconfig').tsserver.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -118,6 +103,26 @@ require('lspconfig').tsserver.setup {
 			vim.lsp.diagnostic.on_publish_diagnostics(_, params, client_id, config)
 		end,
 	},
+}
+
+require('lspconfig').gopls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').html.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').cssls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require('lspconfig').rust_analyzer.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
 }
 
 require('lspconfig').marksman.setup {
