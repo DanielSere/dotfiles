@@ -12,7 +12,7 @@ super + alt + Return
 
 # open appfinder
 super + @Menu
-	rofi -combi-modi drun -display-combi "Run:" -display-drun "" -show combi
+	rofi -theme-str "#mode-switcher \{ enabled: false; \} #listview \{columns: 2; \}" -modi drun -show drun -display-drun "Run:"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -27,7 +27,7 @@ super + e
 
 # open launcher
 super + l
-	bash ~/.config/rofi/launcher.sh
+	bash ~/.config/rofi/layoutmenu.sh
 
 # open cmus
 super + m
@@ -50,7 +50,7 @@ super + w
 	bash ~/.config/rofi/windowmenu.sh
 
 super + ctrl + shift + n
-	echo -n 'Ññ' | xclip -selection clipboard ; sleep 0.2 ; xdotool type $(xclip -o -selection clipboard)
+	xdotool type "Ññ"
 
 ###################
 ## bspwm hotkeys ##

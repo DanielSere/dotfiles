@@ -15,7 +15,7 @@ map('n', '<C-q>', ':q!<cr>', { desc = 'Force Quit' })
 map('n', '<C-z>', ':wq<cr>', { desc = 'Write and Quit' })
 map('n', '<leader>fn', ':enew<cr>', { desc = 'New File' })
 
-map('n', '<leader>tt', ':TermExec direction=float dir=pwd <cr>', { desc = 'terminal' })
+map('n', '<leader>tt', ':TermExec direction=float dir=pwd cmd=clear;pfetch <cr>', { desc = 'terminal' })
 map('n', '<leader>tl', ':TermExec direction=float dir=pwd cmd=lazygit;exit <cr>', {desc = 'lazygit'})
 map('n', '<leader>tf', ':TermExec direction=float dir=pwd cmd=lf;exit <cr>', {desc = 'lf'})
 

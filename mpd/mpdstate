@@ -1,8 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
-current: 2
+state: play
+current: 115
+time: 120.069000
 random: 0
 repeat: 0
 single: 0
@@ -12,16 +13,325 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 0:Depressive Silence - Forests Of Eternity.mp3
-1:Depressive Silence - Depths Of The Oceans.mp3
-2:Depressive Silence - Spheres.mp3
-3:Depressive Silence - Mourning.mp3
-4:Depressive Silence - Dreams.mp3
-5:Fief - Cobblestone & Magic.mp3
-6:Fief - Tales by Tavern Hearthglow.mp3
-7:Fief - Meetings Under Medieval Stars.mp3
-8:Fief - Wandering Minstrel.mp3
-9:Fief - The Tinker_s Wagon.mp3
-10:Fief - To Rest in the Shade of Dragon Wings.mp3
-11:Knights of Nvrul - The Crepuscular God.mp3
-12:Darken Wood - A Dream, a Warning.mp3
+1:Depressive Silence - Forests Of Eternity.mp3
+2:Old Sorcery - Fortress of Molten Silver.mp3
+3:Fief - A Good Inn.mp3
+4:Depressive Silence - Depths Of The Oceans.mp3
+5:Depressive Silence - Spheres.mp3
+6:Darken Wood - A Dream, a Warning.mp3
+7:Knights of Nvrul - Alysmourn.mp3
+8:Depressive Silence - Mourning.mp3
+9:Old Sorcery - The Path Lies Hidden.mp3
+10:Old Sorcery - The Path Lies Hidden.mp3
+11:Depressive Silence - Dreams.mp3
+12:Fief - Cobblestone & Magic.mp3
+13:Fief - Tales by Tavern Hearthglow.mp3
+14:Fief - Meetings Under Medieval Stars.mp3
+15:Fief - Wandering Minstrel.mp3
+16:Fief - The Tinker_s Wagon.mp3
+17:Fief - To Rest in the Shade of Dragon Wings.mp3
+18:Knights of Nvrul - The Crepuscular God.mp3
+19:Darken Wood - A Dream, a Warning.mp3
+20:Old Sorcery - An Inkling of Void.mp3
+21:Knights of Nvrul - The Crepuscular God.mp3
+22:Knights of Nvrul - Lost Magicks and Sorceries Dormant.mp3
+23:Knights of Nvrul - Knights of Nvrul.mp3
+24:Knights of Nvrul - Spell and Claw.mp3
+25:Knights of Nvrul - Alysmourn.mp3
+26:Knights of Nvrul - Dissolution of the Order.mp3
+27:Old Sorcery - Towards the Mana Shrine.mp3
+28:Old Sorcery - The Inn on the Borderland.mp3
+29:Old Sorcery - Oglaz, Raven of Occult Knowledge.mp3
+30:Old Sorcery - And Only I Have the Key.mp3
+31:Old Sorcery - A Haven.mp3
+32:Old Sorcery - To the Far Valleys and Mountains Strong.mp3
+33:Old Sorcery - Conjuration From the Unsilent Woods.mp3
+34:Depressive Silence - Dark Soul.mp3
+35:Depressive Silence - Lost in my dreams.mp3
+36:Fief - Cobblestone & Magic.mp3
+37:Fief - Tales by Tavern Hearthglow.mp3
+38:Fief - Meetings Under Medieval Stars.mp3
+39:Fief - Wandering Minstrel.mp3
+40:Fief - The Tinker_s Wagon.mp3
+41:Fief - To Rest in the Shade of Dragon Wings.mp3
+42:Darken Wood - Blood in the Hollow.mp3
+43:Darken Wood - Grim Procession.mp3
+44:Darken Wood - A Forest Laments.mp3
+45:Darken Wood - The Avenging Blade.mp3
+46:Darken Wood - A Dream, a Warning.mp3
+47:Darken Wood - Friends in Dark Times.mp3
+48:Darken Wood - An Unexpected Path.mp3
+49:Darken Wood - Circle of Mist.mp3
+50:Fief - Dawnlight Warms the Castle Stone.mp3
+51:Darken Wood - Cursed and Forgotten Tomb.mp3
+52:Fief - Deep Forest Dance.mp3
+53:Darken Wood - The Shadow Speaks.mp3
+54:Fief - Medieval Breeze.mp3
+55:Darken Wood - Forbidden Spell.mp3
+56:Fief - Peddling Potions.mp3
+57:Darken Wood - The Sparrowhawk.mp3
+58:Fief - The Dice Wizard.mp3
+59:Darken Wood - Hidden Temple.mp3
+60:Fief - A Good Inn.mp3
+61:Fief - In the Secret Glade of the Shy Dragon.mp3
+62:Fief - Soul of a Nameless Bard.mp3
+63:Darken Wood - Black Fell Dragon.mp3
+64:Fief - Dodecahedronous Questing.mp3
+65:Darken Wood - The Sacrifice.mp3
+66:Fief - Secret Shops.mp3
+67:Darken Wood - Stalking the Prey.mp3
+68:Fief - The Sword That Sang.mp3
+69:Darken Wood - Escape to the Faerie Village.mp3
+70:Fief - Innkeeper.mp3
+71:Darken Wood - A Night of Reflection.mp3
+72:Fief - Morning in the Misty Valley.mp3
+73:Darken Wood - The Wise Old Tree.mp3
+74:Fief - Autumnal Winds.mp3
+75:Darken Wood - A New Resolve.mp3
+76:Fief - The Talespinner.mp3
+77:Darken Wood - Campfire Dance.mp3
+78:Fief - The Daydreaming Sentry.mp3
+79:Darken Wood - Moon Silver Bow.mp3
+80:Fief - Evening Market.mp3
+81:Darken Wood - Strange Runes.mp3
+82:Fief - Wayfarer_s Wind.mp3
+83:Darken Wood - Wolf Cub.mp3
+84:Fief - Neath the Gently Swaying Boughs.mp3
+85:Darken Wood - Ghost Lights.mp3
+86:Fief - Medieval Skies.mp3
+87:Darken Wood - Web of Spells.mp3
+88:Fief - Faire.mp3
+89:Darken Wood - The Prisoner.mp3
+90:Fief - The Waiting Hearth.mp3
+91:Knights of Nvrul - Knightronauts.mp3
+92:Knights of Nvrul - Ghost Tower.mp3
+93:Knights of Nvrul - Kerutoria.mp3
+94:Knights of Nvrul - Buried Below Dunes Afar.mp3
+95:Knights of Nvrul - Tournament.mp3
+96:Knights of Nvrul - The Stars and You.mp3
+97:Knights of Nvrul - Departing From Reality.mp3
+98:Knights of Nvrul - Armoured Dreamers.mp3
+99:Hedge Wizard - Ancient Vibrations.mp3
+100:Hedge Wizard - Huffing Petrichor.mp3
+101:Hedge Wizard - Odd Visions.mp3
+102:Hedge Wizard - As Old As The Hills.mp3
+103:Hedge Wizard - Cemetary Violence.mp3
+104:Hedge Wizard - Clairvoyance.mp3
+105:Hedge Wizard - Conjurer_s Clutter.mp3
+106:Hedge Wizard - More True Than Time Thought.mp3
+107:Depressive Silence - Forests Of Eternity.mp3
+108:Depressive Silence - Depths Of The Oceans.mp3
+109:Depressive Silence - Spheres.mp3
+110:Depressive Silence - Mourning.mp3
+111:Depressive Silence - Dreams.mp3
+112:Old Sorcery - Sorcerer_s Dream.mp3
+113:Old Sorcery - Vaikerruksen Portti.mp3
+114:Old Sorcery - A Lost Soul Amid the Listening Trees.mp3
+115:Old Sorcery - In a Forest Trapped.mp3
+116:Old Sorcery - Further Beyond the Melancholic Horizon.mp3
+117:Old Sorcery - Fortress of Molten Silver.mp3
+118:Old Sorcery - Voidborn.mp3
+119:Old Sorcery - Phantasm.mp3
+120:Old Sorcery - Blades of a Reflection.mp3
+121:Solanum - An Illusion Of Time.mp3
+122:Solanum - Senseless.mp3
+123:Solanum - Passing The Gates To Another World.mp3
+124:Solanum - Space & Time.mp3
+125:Knights of Nvrul - Sri G_thra.mp3
+126:Knights of Nvrul - Servant to the Sage.mp3
+127:Knights of Nvrul - Traitor of Kin, Oath and Lifted Curse.mp3
+128:Knights of Nvrul - Fire on Silent Metal Wings.mp3
+129:Knights of Nvrul - The Exalted Halls of Nvruls Palace.mp3
+130:Knights of Nvrul - Endless Caves... Eminent Echoes Under Alysmourn.mp3
+131:Old Sorcery - The Crystal Funeral.mp3
+132:Old Sorcery - Fimbrethil.mp3
+133:Old Sorcery - A Moss Covered Grimoire.mp3
+134:Old Sorcery - Tears of a Dying Star.mp3
+135:Old Sorcery - Tulessa Uinuva Kuningas.mp3
+136:Knights of Nvrul - New Home Among the Stars.mp3
+137:Knights of Nvrul - Mirror Moon.mp3
+138:Knights of Nvrul - Boundless Sage.mp3
+139:Knights of Nvrul - Sword of Äonheart.mp3
+140:Knights of Nvrul - Pale and Derelict.mp3
+141:Knights of Nvrul - Our Velvet Banners Fly Forever.mp3
+142:Knights of Nvrul - New Mysteries.mp3
+143:Knights of Nvrul - Starquest.mp3
+144:Knights of Nvrul - Dream Vultures.mp3
+145:Knights of Nvrul - Sevrn Q_vorgän.mp3
+146:Depressive Silence - In death_s sleep.mp3
+147:Depressive Silence - To die in your dreams.mp3
+148:Depressive Silence - Black visions.mp3
+149:Depressive Silence - Journey to my realms.mp3
+150:Depressive Silence - Medieval Demons.mp3
+151:Depressive Silence - Dark Side.mp3
+152:Depressive Silence - Düsterwald.mp3
+153:Darken Wood - Lost Without Hope.mp3
+154:Fief - The Road Through Town.mp3
+155:Darken Wood - Among the Devoured Tombs.mp3
+156:Fief - Medieval Reveries.mp3
+157:Darken Wood - Kissed by Poison Fire.mp3
+158:Fief - Citadel Streets.mp3
+159:Darken Wood - The Hunter Finds Her.mp3
+160:Fief - The Mushroom Mage.mp3
+161:Darken Wood - In the Throes of Sorrow_s Madness.mp3
+162:Fief - The Days of Dice and Daring.mp3
+163:Darken Wood - Her Song Guides the Arrow.mp3
+164:Fief - Dragon Songs.mp3
+165:Darken Wood - Piercing the Demon_s Heart.mp3
+166:Fief - On Bardic Journeys.mp3
+167:Darken Wood - The Light Returns.mp3
+168:Old Sorcery - Council of the Battle Sorcerers.mp3
+169:Old Sorcery - Triumphant Eyes.mp3
+170:Old Sorcery - Echoes in the Stillness.mp3
+171:Old Sorcery - An Inkling of Void.mp3
+172:Knights of Nvrul - The Crepuscular God.mp3
+173:Knights of Nvrul - Lost Magicks and Sorceries Dormant.mp3
+174:Knights of Nvrul - Knights of Nvrul.mp3
+175:Knights of Nvrul - Spell and Claw.mp3
+176:Knights of Nvrul - Alysmourn.mp3
+177:Knights of Nvrul - Dissolution of the Order.mp3
+178:Old Sorcery - Towards the Mana Shrine.mp3
+179:Old Sorcery - The Inn on the Borderland.mp3
+180:Old Sorcery - Oglaz, Raven of Occult Knowledge.mp3
+181:Old Sorcery - And Only I Have the Key.mp3
+182:Old Sorcery - A Haven.mp3
+183:Old Sorcery - To the Far Valleys and Mountains Strong.mp3
+184:Old Sorcery - Conjuration From the Unsilent Woods.mp3
+185:Depressive Silence - Dark Soul.mp3
+186:Depressive Silence - Lost in my dreams.mp3
+187:Fief - Cobblestone & Magic.mp3
+188:Fief - Tales by Tavern Hearthglow.mp3
+189:Fief - Meetings Under Medieval Stars.mp3
+190:Fief - Wandering Minstrel.mp3
+191:Fief - The Tinker_s Wagon.mp3
+192:Fief - To Rest in the Shade of Dragon Wings.mp3
+193:Darken Wood - Blood in the Hollow.mp3
+194:Darken Wood - Grim Procession.mp3
+195:Darken Wood - A Forest Laments.mp3
+196:Darken Wood - The Avenging Blade.mp3
+197:Darken Wood - A Dream, a Warning.mp3
+198:Darken Wood - Friends in Dark Times.mp3
+199:Darken Wood - An Unexpected Path.mp3
+200:Darken Wood - Circle of Mist.mp3
+201:Fief - Dawnlight Warms the Castle Stone.mp3
+202:Darken Wood - Cursed and Forgotten Tomb.mp3
+203:Fief - Deep Forest Dance.mp3
+204:Darken Wood - The Shadow Speaks.mp3
+205:Fief - Medieval Breeze.mp3
+206:Darken Wood - Forbidden Spell.mp3
+207:Fief - Peddling Potions.mp3
+208:Darken Wood - The Sparrowhawk.mp3
+209:Fief - The Dice Wizard.mp3
+210:Darken Wood - Hidden Temple.mp3
+211:Fief - A Good Inn.mp3
+212:Fief - In the Secret Glade of the Shy Dragon.mp3
+213:Fief - Soul of a Nameless Bard.mp3
+214:Darken Wood - Black Fell Dragon.mp3
+215:Fief - Dodecahedronous Questing.mp3
+216:Darken Wood - The Sacrifice.mp3
+217:Fief - Secret Shops.mp3
+218:Darken Wood - Stalking the Prey.mp3
+219:Fief - The Sword That Sang.mp3
+220:Darken Wood - Escape to the Faerie Village.mp3
+221:Fief - Innkeeper.mp3
+222:Darken Wood - A Night of Reflection.mp3
+223:Fief - Morning in the Misty Valley.mp3
+224:Darken Wood - The Wise Old Tree.mp3
+225:Fief - Autumnal Winds.mp3
+226:Darken Wood - A New Resolve.mp3
+227:Fief - The Talespinner.mp3
+228:Darken Wood - Campfire Dance.mp3
+229:Fief - The Daydreaming Sentry.mp3
+230:Darken Wood - Moon Silver Bow.mp3
+231:Fief - Evening Market.mp3
+232:Darken Wood - Strange Runes.mp3
+233:Fief - Wayfarer_s Wind.mp3
+234:Darken Wood - Wolf Cub.mp3
+235:Fief - Neath the Gently Swaying Boughs.mp3
+236:Darken Wood - Ghost Lights.mp3
+237:Fief - Medieval Skies.mp3
+238:Darken Wood - Web of Spells.mp3
+239:Fief - Faire.mp3
+240:Darken Wood - The Prisoner.mp3
+241:Fief - The Waiting Hearth.mp3
+242:Knights of Nvrul - Knightronauts.mp3
+243:Knights of Nvrul - Ghost Tower.mp3
+244:Knights of Nvrul - Kerutoria.mp3
+245:Knights of Nvrul - Buried Below Dunes Afar.mp3
+246:Knights of Nvrul - Tournament.mp3
+247:Knights of Nvrul - The Stars and You.mp3
+248:Knights of Nvrul - Departing From Reality.mp3
+249:Knights of Nvrul - Armoured Dreamers.mp3
+250:Hedge Wizard - Ancient Vibrations.mp3
+251:Hedge Wizard - Huffing Petrichor.mp3
+252:Hedge Wizard - Odd Visions.mp3
+253:Hedge Wizard - As Old As The Hills.mp3
+254:Hedge Wizard - Cemetary Violence.mp3
+255:Hedge Wizard - Clairvoyance.mp3
+256:Hedge Wizard - Conjurer_s Clutter.mp3
+257:Hedge Wizard - More True Than Time Thought.mp3
+258:Depressive Silence - Forests Of Eternity.mp3
+259:Depressive Silence - Depths Of The Oceans.mp3
+260:Depressive Silence - Spheres.mp3
+261:Depressive Silence - Mourning.mp3
+262:Depressive Silence - Dreams.mp3
+263:Old Sorcery - Sorcerer_s Dream.mp3
+264:Old Sorcery - Vaikerruksen Portti.mp3
+265:Old Sorcery - A Lost Soul Amid the Listening Trees.mp3
+266:Old Sorcery - In a Forest Trapped.mp3
+267:Old Sorcery - Further Beyond the Melancholic Horizon.mp3
+268:Old Sorcery - Fortress of Molten Silver.mp3
+269:Old Sorcery - Voidborn.mp3
+270:Old Sorcery - Phantasm.mp3
+271:Old Sorcery - Blades of a Reflection.mp3
+272:Solanum - An Illusion Of Time.mp3
+273:Solanum - Senseless.mp3
+274:Solanum - Passing The Gates To Another World.mp3
+275:Solanum - Space & Time.mp3
+276:Knights of Nvrul - Sri G_thra.mp3
+277:Knights of Nvrul - Servant to the Sage.mp3
+278:Knights of Nvrul - Traitor of Kin, Oath and Lifted Curse.mp3
+279:Knights of Nvrul - Fire on Silent Metal Wings.mp3
+280:Knights of Nvrul - The Exalted Halls of Nvruls Palace.mp3
+281:Knights of Nvrul - Endless Caves... Eminent Echoes Under Alysmourn.mp3
+282:Old Sorcery - The Crystal Funeral.mp3
+283:Old Sorcery - Fimbrethil.mp3
+284:Old Sorcery - A Moss Covered Grimoire.mp3
+285:Old Sorcery - Tears of a Dying Star.mp3
+286:Old Sorcery - Tulessa Uinuva Kuningas.mp3
+287:Knights of Nvrul - New Home Among the Stars.mp3
+288:Knights of Nvrul - Mirror Moon.mp3
+289:Knights of Nvrul - Boundless Sage.mp3
+290:Knights of Nvrul - Sword of Äonheart.mp3
+291:Knights of Nvrul - Pale and Derelict.mp3
+292:Knights of Nvrul - Our Velvet Banners Fly Forever.mp3
+293:Knights of Nvrul - New Mysteries.mp3
+294:Knights of Nvrul - Starquest.mp3
+295:Knights of Nvrul - Dream Vultures.mp3
+296:Knights of Nvrul - Sevrn Q_vorgän.mp3
+297:Depressive Silence - In death_s sleep.mp3
+298:Depressive Silence - To die in your dreams.mp3
+299:Depressive Silence - Black visions.mp3
+300:Depressive Silence - Journey to my realms.mp3
+301:Depressive Silence - Medieval Demons.mp3
+302:Depressive Silence - Dark Side.mp3
+303:Depressive Silence - Düsterwald.mp3
+304:Darken Wood - Lost Without Hope.mp3
+305:Fief - The Road Through Town.mp3
+306:Darken Wood - Among the Devoured Tombs.mp3
+307:Fief - Medieval Reveries.mp3
+308:Darken Wood - Kissed by Poison Fire.mp3
+309:Fief - Citadel Streets.mp3
+310:Darken Wood - The Hunter Finds Her.mp3
+311:Fief - The Mushroom Mage.mp3
+312:Darken Wood - In the Throes of Sorrow_s Madness.mp3
+313:Fief - The Days of Dice and Daring.mp3
+314:Darken Wood - Her Song Guides the Arrow.mp3
+315:Fief - Dragon Songs.mp3
+316:Darken Wood - Piercing the Demon_s Heart.mp3
+317:Fief - On Bardic Journeys.mp3
+318:Darken Wood - The Light Returns.mp3
+319:Old Sorcery - Council of the Battle Sorcerers.mp3
+320:Old Sorcery - Triumphant Eyes.mp3
+321:Old Sorcery - Echoes in the Stillness.mp3
 playlist_end

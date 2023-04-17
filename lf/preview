@@ -25,7 +25,8 @@ case "$(file -Lb --mime-type -- "$FILE")" in
 		magick convert "$FILE" -resize 100% "$CACHE.png"
 		~/.config/lf/image draw "$CACHE.png" "$2" "$3" "$4" "$5" "$6" && exit 1;;
 	image/*)
-		chafa -C yes -s "${2}x${3}" "$FILE" && exit 1;;
+		timg --grid=3x2 "$FILE" && exit 1;;
+		# chafa -C yes -s "${2}x${3}" "$FILE" && exit 1;;
 		#kitty +kitten icat --clear --stdin no --silent --transfer-mode file < /dev/null > /dev/tty
 		#kitty +kitten icat --silent --stdin no --transfer-mode file --place "${2}x${3}@${4}x${5}" "$FILE" < /dev/null > /dev/tty && exit 1;;
 	video/*)
