@@ -1,0 +1,149 @@
+#!/bin/bash
+
+ROFI() {
+	CURRENT=$(mpc current)
+	CURRENTTIME=$(mpc status "\[%currenttime%-%totaltime%\]")
+	[ -z "$CURRENT" ] && CURRENT="MPD isn't playing anything right now"
+	rofi -theme-str "#entry { text-color: @background-color; }" $1 -dmenu -p "$CURRENTTIME  $CURRENT" $2
+}
+
+cur_pos() {
+	$(mpc  | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
+}
+
+end_pos() {
+	$(mpc playlist | wc -l)
+}
+
+addaftercurrent(){
+	if [ "$(mpc playlist | wc -l)" == "0" ]; then
+		mpc add "$1" 
+	elif [ -z "$(mpc current)" ]; then 
+		mpc play
+		mpc add "$1"
+		mpc move $(( end_pos +1)) $(( cur_pos +1))
+		mpc stop
+	else
+		mpc add "$1"
+		mpc move $(( end_pos +1)) $(( cur_pos +1))
+	fi
+}
+addaftercurrentandplay(){
+	if [ "$(mpc playlist | wc -l)" == "0" ]; then
+		mpc add "$1" 
+		mpc play
+	elif [ -z "$(mpc current)" ]; then 
+		mpc play
+		mpc add "$1"
+		mpc move $(( end_pos +1)) $(( cur_pos +1))
+		mpc play $(( cur_pos +1))
+	else
+		mpc add "$1"
+		mpc move $(( end_pos +1)) $(( cur_pos +1))
+		mpc play $(( cur_pos +1))
+	fi
+}
+
+queued() {
+	TITLE=$(echo -e "Clear\n$(mpc playlist)" | ROFI "-selected-row 1" "-u '0'");
+	POS=$(mpc playlist | grep -n "$TITLE" | awk -F: '{print $1}')
+	case $TITLE in
+		"Clear") mpc clear;;
+		"") ;;
+		*) mpc play "$POS"; queued;;
+	esac
+}
+
+artist() {
+	while true; do
+		ARTIST="$(mpc list artist | sort -f | ROFI)";
+		[ "$ARTIST" = "" ] && break
+		while true; do
+			ALBUMS="$(mpc list album artist "$ARTIST" | sort -f)";
+			ALBUM=$(echo -e "Replace all\nAdd all\n$ALBUMS" | ROFI "-selected-row 2" "-u '0,1'");
+			case $ALBUM in
+				"Replace all")
+					mpc clear
+					mpc find artist "$ARTIST" | mpc add
+					[ -n "$(mpc current)" ] && mpc play
+					break;;
+				"Add all")
+					mpc find artist "$ARTIST" | mpc add
+					break;;
+				"") break;;
+			esac
+			while true; do
+				TITLES=$(mpc list title artist "$ARTIST" album "$ALBUM")
+				TITLE=$(echo -e "Replace all\nAdd all\n$TITLES" | ROFI "-selected-row 2" "-u '0,1'");
+				case $TITLE in
+					"Replace all")
+						mpc clear
+						mpc find artist "$ARTIST" album "$ALBUM" | mpc add
+						[ -n "$(mpc current)" ] && mpc play;
+						break;;
+					"Add all")
+						mpc find artist "$ARTIST" album "$ALBUM" | mpc add
+						break;;
+					"") break;;
+				esac
+				while true; do
+					DEC=$(echo -e "Add after current and play\nAdd after current\nAdd at the end\nReplace" | ROFI "-selected-row 0" "-u ':");
+					case $DEC in 
+						"Add after current and play")
+							addaftercurrentandplay "$(mpc find artist "$ARTIST" album "$ALBUM" title "$TITLE" | head -1 )";;
+						"Add after current")
+							addaftercurrent "$(mpc find artist "$ARTIST" album "$ALBUM" title "$TITLE" | head -1 )";;
+						"Add at the end")
+							mpc find artist "$ARTIST" album "$ALBUM" title "$TITLE" | head -1 | mpc add;;
+						"Replace")
+							mpc clear
+							mpc find artist "$ARTIST" album "$ALBUM" title "$TITLE" | head -1 | mpc add
+							[ -n "$(mpc current)" ] && mpc play;;
+						"") break;;
+					esac
+					break
+				done
+			done
+		done
+	done
+}
+
+track() {
+	TITLE=$(mpc list title | sort -f | ROFI)
+	case $TITLE in 
+		"") ;;
+		* ) addaftercurrentandplay "$(mpc find title "$TITLE" | head -1)"; track;;
+	esac
+}
+
+playlist() {
+	PLAYLIST=$(mpc lsplaylists | ROFI);
+	[ -z "$PLAYLIST" ] && exit
+	CUR_SONG=$(mpc current)
+	mpc clear
+	mpc load "$PLAYLIST";
+	[ -n "$CUR_SONG" ] && mpc play
+	playlist
+}
+
+
+MENU() {
+	menu="Stop\nQueued\nArtist\nTrack"
+	[ -z "$(mpc | grep playing)" ] && menu="Play\n$menu" || menu="Pause\n$menu"
+	echo -e $menu
+}
+
+main() {
+	case $(MENU | ROFI "-selected-row 0" "-u '0,1'") in
+		"Play"    ) mpc toggle; main;;
+		"Pause"   ) mpc toggle; main;;
+		"Stop"    ) mpc stop; main;;
+		"Queued"  ) queued; main;;
+		"Artist"  ) artist; main;;
+		"Track"   ) track; main;;
+		"Playlist") playlist; main;;
+		*) ;;
+	esac
+}
+
+main

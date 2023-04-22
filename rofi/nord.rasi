@@ -24,7 +24,7 @@
     nord11:    #bf616a;
 
     nord12:    #d08770;
-    nord13:    #ebcb8b;
+    nord13:    #ebcb8b ;
     nord14:    #a3be8c;
     nord15:    #b48ead;
 
@@ -43,7 +43,7 @@ window {
 
     location:   center;
     width:      600px;
-	height: 	428px;
+	/* height: 	428px; */
     border:     2px;
 }
 
@@ -84,6 +84,10 @@ element normal urgent {
     text-color: @nord13;
 }
 
+element alternate urgent {
+    text-color:   @nord13;
+}
+
 element normal active {
     text-color: @accent-color;
 }
@@ -99,6 +103,7 @@ element selected normal {
 element selected urgent {
     background-color:   @nord13;
 }
+
 
 element selected active {
     background-color:   @nord8;

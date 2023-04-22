@@ -1,0 +1,31 @@
+#!/bin/bash
+
+ROFI() {
+	CURRENT=$(mpc current)
+	CURRENTTIME=$(mpc status "\[%currenttime%-%totaltime%\]")
+	[ -z "$CURRENT" ] && CURRENT="MPD isn't playing anything right now"
+	rofi -theme-str "#entry { text-color: @background-color; } #listview { lines: 12; }" -dmenu -p "$CURRENTTIME  $CURRENT"
+}
+
+dash_line="---------------------------------------------------------"
+
+MENU() {
+	titles=$(mpc listall | sort -f | awk '{print "\\n"$0}')
+	menu="Stop\n$dash_line$titles"
+	[ -z "$(mpc | grep playing)" ] && menu="Play\n$menu" || menu="Pause\n$menu"
+	echo -e $menu
+}
+
+main() {
+	SEL=$(MENU | ROFI)
+	echo "$SEL a"
+	case "$SEL" in
+		"Play" ) mpc toggle; main;;
+		"Pause") mpc toggle; main;;
+		"Stop" ) mpc stop; main;;
+		""     ) break;;
+		*      ) mpc clear; mpc add "$SEL"; mpc play; main;;
+	esac
+}
+
+main
