@@ -1,47 +1,15 @@
 #!/bin/bash
 
 ROFI() {
-	CURRENT=$(mpc current)
+	CURRENT=$(mpc current | sed -e 's/&/and/g')
 	CURRENTTIME=$(mpc status "\[%currenttime%-%totaltime%\]")
-	CONFIG="#entry {text-color: @background-color;}"
+	CONFIG='#entry { text-color: @accent-color; }'
 	[ -z "$CURRENT" ] && CURRENT="MPD isn't playing anything right now"
-	rofi -theme-str "$CONFIG" -dmenu -i -p "$CURRENTTIME  $CURRENT" $1
-}
-
-cur_pos() {	$(mpc  | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}') ; }
-end_pos() { $(mpc playlist | wc -l) ; }
-
-add_after_current(){
-	if [ "$(mpc playlist | wc -l)" == "0" ]; then
-		mpc add "$1" 
-	elif [ -z "$(mpc current)" ]; then 
-		mpc play
-		mpc add "$1"
-		mpc move $(( end_pos +1)) $(( cur_pos +1))
-		mpc stop
-	else
-		mpc add "$1"
-		mpc move $(( end_pos +1)) $(( cur_pos +1))
-	fi
-}
-add_after_current_and_play(){
-	if [ "$(mpc playlist | wc -l)" == "0" ]; then
-		mpc add "$1" 
-		mpc play
-	elif [ -z "$(mpc current)" ]; then 
-		mpc play
-		mpc add "$1"
-		mpc move $(( end_pos +1)) $(( cur_pos +1))
-		mpc play $(( cur_pos +1))
-	else
-		mpc add "$1"
-		mpc move $(( end_pos +1)) $(( cur_pos +1))
-		mpc play $(( cur_pos +1))
-	fi
+	rofi -config ~/.config/rofi/musicmenu.rasi -theme-str "$CONFIG" -dmenu -i -p "Search:" -mesg "$CURRENTTIME $CURRENT" $1
 }
 
 queued() {
-	OPTION=$(echo -e "Clear\n$(mpc playlist)" | ROFI "-u '0'");
+	OPTION=$(echo -e "Clear\n$(mpc playlist)" | ROFI " -u '0' ");
 	TITLE=$(mpc playlist | grep -n "$OPTION" | awk -F: '{print $1}')
 	[ "$OPTION" == "Clear" ] && mpc clear
 	[ -n "$OPTION" ] && mpc play "$TITLE" || return
@@ -51,7 +19,7 @@ queued() {
 track() {
 	OPTION=$(mpc list title | sort -f | ROFI)
 	TITLE=$(mpc find title "$OPTION" | head -1)
-	[ -n "$OPTION" ] && add_after_current_and_play "$TITLE" || return
+	[ -n "$OPTION" ] && (mpc insert "$TITLE"; mpc next; mpc play) || return
 	track
 }
 
@@ -66,57 +34,35 @@ playlist() {
 }
 
 artist() {
-	while true; do
-		ARTIST="$(mpc list artist | sort -f | ROFI)";
-		[ "$ARTIST" = "" ] && return
-		while true; do
-			TITLES=$(mpc list title artist "$ARTIST")
-			TITLE=$(echo -e "Add all\nReplace all\n$TITLES" | ROFI "-u '0,1'");
-			case $TITLE in
-				"Replace all")
-					mpc clear; mpc find artist "$ARTIST" | mpc add
-					[ -n "$(mpc current)" ] && mpc play || break;;
-				"Add all")
-					mpc find artist "$ARTIST" | mpc add; break;;
-				"") break;;
-			esac
-			while true; do
-				DEC=$(echo -e "Add after current and play\nAdd after current\nAdd at the end\nReplace" | ROFI "-u ':");
-				case $DEC in 
-					"Add after current and play")
-						add_after_current_and_play "$(mpc find artist "$ARTIST" title "$TITLE" | head -1 )";;
-					"Add after current")
-						add_after_current "$(mpc find artist "$ARTIST" title "$TITLE" | head -1 )";;
-					"Add at the end")
-						mpc find artist "$ARTIST" title "$TITLE" | head -1 | mpc add;;
-					"Replace")
-						mpc clear; mpc find artist "$ARTIST" title "$TITLE" | head -1 | mpc add
-						[ -n "$(mpc current)" ] && mpc play;;
-					"") break;;
-				esac
-				break
-			done
-		done
-	done
+	ARTIST="$(mpc list artist | sort -f | ROFI)";
+	[ -z "$ARTIST" ] && return
+	TITLES=$(mpc list title artist "$ARTIST")
+	TITLE=$(echo -e "Add all\nReplace all\n$TITLES" | ROFI " -u '0,1' ")
+	case $TITLE in
+		"Replace all") mpc clear; mpc find artist "$ARTIST" | mpc add; mpc play; return;;
+		"Add all") mpc find artist "$ARTIST" | mpc add; return;;
+		"") artist;;
+		*) mpc find artist "$ARTIST" title "$TITLE" | mpc insert; mpc next; mpc play; return;;
+	esac
 }
 
 MENU() {
-	menu="Stop\nQueued\nArtist\nTrack"
-	[ -z "$(mpc | grep playing)" ] && menu="Play\n$menu" || menu="Pause\n$menu"
-	echo -e $menu
+	MENU="Stop\nQueued\nArtist\nTrack"
+	[ -z "$(mpc | grep playing)" ] && MENU="Play\n$MENU" || MENU="Pause\n$MENU"
+	echo -e $MENU
 }
 
-main() {
-	case $(MENU | ROFI "-u '0,1'") in
-		"Play"    ) mpc toggle; main;;
-		"Pause"   ) mpc toggle; main;;
-		"Stop"    ) mpc stop; main;;
-		"Queued"  ) queued; main;;
-		"Artist"  ) artist; main;;
-		"Track"   ) track; main;;
-		"Playlist") playlist; main;;
+MAIN() {
+	case $(MENU | ROFI " -u '0,1' ") in
+		"Play"    ) mpc toggle; MAIN;;
+		"Pause"   ) mpc toggle; MAIN;;
+		"Stop"    ) mpc stop; MAIN;;
+		"Queued"  ) queued; MAIN;;
+		"Artist"  ) artist; MAIN;;
+		"Track"   ) track; MAIN;;
+		"Playlist") playlist; MAIN;;
 		*) ;;
 	esac
 }
 
-main
+MAIN
