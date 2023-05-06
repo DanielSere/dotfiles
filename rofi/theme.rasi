@@ -1,8 +1,5 @@
 /*******************************************************************************
  * ROFI VERTICAL THEME USING THE NORD COLOR PALETTE 
- * User                 : LR-Tech               
- * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
- * Nord Project Repo    : https://github.com/arcticicestudio/nord
  *******************************************************************************/
 
 * {
@@ -28,13 +25,13 @@
     nord14:    #a3be8c;
     nord15:    #b48ead;
 
-    background-color:   transparent;
+    background-color: transparent;
     text-color:         @nord8;
     accent-color:       @nord8;
 
-    margin:     0px;
-    padding:    0px;
-    spacing:    0px;
+    margin:  0px;
+    padding: 0px;
+    spacing: 0px;
 }
 
 window {
@@ -47,11 +44,11 @@ window {
 }
 
 inputbar {
-    padding:    8px 12px;
-    spacing:    12px;
-	border: 		0px 0px 2px 0px solid;
-	border-color:	@accent-color;
-    children:   [ prompt, entry ];
+    padding:      8px 12px;
+    spacing:      12px;
+    border:       0px 0px 2px 0px solid;
+    border-color: @accent-color;
+    children:     [ prompt, entry ];
 }
 
 prompt, entry, element-text, element-icon {
@@ -63,18 +60,40 @@ prompt {
 }
 
 entry {
-	text-color: @text-color;
+    text-color: @text-color;
 }
 
 message {
-	text-color: @accent-color;
+    padding:      8px 12px;
+    border:       0px 0px 2px 0px;
+    border-color: @accent-color;
 }
+
 listview {
-    lines:      8;
+	padding: 2px;
+    lines:      12;
     columns:    1;
-	border: 2px solid;
-	border-color: @background-color;
+	border: 0px;
+	border-color: @accent-color;
     fixed-height:   false;
+}
+
+mode-switcher {
+    enabled: true;
+    margin: 3px;
+}
+
+button selected {
+    text-color: @nord0;
+    background-color: @accent-color;
+}
+
+mainbox {
+    enabled: true;
+    children: [inputbar,listview,mode-switcher];
+}
+
+configuration {
 }
 
 element {

@@ -3,9 +3,9 @@
 ROFI() {
 	CURRENT=$(mpc current | sed -e 's/&/and/g')
 	CURRENTTIME=$(mpc status "\[%currenttime%-%totaltime%\]")
-	CONFIG='#entry { text-color: @accent-color; }'
+	CONFIG='#mainbox { children: [inputbar,message,listview,mode-switcher]; }'
 	[ -z "$CURRENT" ] && CURRENT="MPD isn't playing anything right now"
-	rofi -config ~/.config/rofi/musicmenu.rasi -theme-str "$CONFIG" -dmenu -i -p "Search:" -mesg "$CURRENTTIME $CURRENT" $1
+	rofi -theme-str "$CONFIG" -dmenu -i -p "Search:" -mesg "$CURRENTTIME $CURRENT" $1
 }
 
 queued() {
@@ -17,8 +17,8 @@ queued() {
 }
 
 track() {
-	OPTION=$(mpc list title | sort -f | ROFI)
-	TITLE=$(mpc find title "$OPTION" | head -1)
+	OPTION=$(mpc listall | sed 's/....$//g' | sort -f | ROFI)
+	TITLE=$(mpc search filename "$OPTION" | head -1)
 	[ -n "$OPTION" ] && (mpc insert "$TITLE"; mpc next; mpc play) || return
 	track
 }
