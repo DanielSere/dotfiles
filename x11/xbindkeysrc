@@ -3,34 +3,34 @@
 ################
 
 # light ++++
-"xbacklight -inc 10"
-    m:0x0 + c:233
-    XF86MonBrightnessUp 
-
-# light ----
-"xbacklight -dec 10"
-    m:0x0 + c:232
-    XF86MonBrightnessDown 
-
-# volume mute
-"pamixer -t"
-    m:0x0 + c:121
-    XF86AudioMute 
-
-# volume ++++
-"pamixer -i 10"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume 
-
-# volume ----
-"pamixer -d 10"
-    m:0x0 + c:122
-    XF86AudioLowerVolume 
+# "xbacklight -inc 10"
+#     m:0x0 + c:233
+#     XF86MonBrightnessUp 
+#
+# # light ----
+# "xbacklight -dec 10"
+#     m:0x0 + c:232
+#     XF86MonBrightnessDown 
+#
+# # volume mute
+# "pamixer -t"
+#     m:0x0 + c:121
+#     XF86AudioMute 
+#
+# # volume ++++
+# "pamixer -i 10"
+#     m:0x0 + c:123
+#     XF86AudioRaiseVolume 
+#
+# # volume ----
+# "pamixer -d 10"
+#     m:0x0 + c:122
+#     XF86AudioLowerVolume 
 
 # screenshot
-"gscreenshot"
-		m:0x0 + c:107
-		Print
+# "xfce4-screenshooter"
+	# m:0x0 + c:107
+	# Print
 
 # some useful keys
 m:0x0 + c:135

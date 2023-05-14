@@ -47,7 +47,7 @@ artist() {
 }
 
 MENU() {
-	MENU="Stop\nQueued\nArtist\nTrack"
+	MENU="Stop\nQueued\nArtist\nTracks"
 	[ -z "$(mpc | grep playing)" ] && MENU="Play\n$MENU" || MENU="Pause\n$MENU"
 	echo -e $MENU
 }
@@ -59,7 +59,7 @@ MAIN() {
 		"Stop"    ) mpc stop; MAIN;;
 		"Queued"  ) queued; MAIN;;
 		"Artist"  ) artist; MAIN;;
-		"Track"   ) track; MAIN;;
+		"Tracks"   ) track; MAIN;;
 		"Playlist") playlist; MAIN;;
 		*) ;;
 	esac

@@ -18,6 +18,7 @@ vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
 vim.opt.guicursor = "a:block-blinkon50"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

@@ -9,15 +9,16 @@ xset -dpms s 0 0 &
 xsetroot -cursor_name left_ptr &
 xrdb -load ~/.config/x11/xresources &
 xbindkeys -f /home/kino/.config/x11/xbindkeysrc &
-xwallpaper --zoom /home/kino/Pictures/Wallpapers/astronaut.jpg &
+xwallpaper --zoom /home/kino/Pictures/Wallpapers/lodoss_deedlit.jpg &
+# music player daemon
+mpd &
 # compositor
-# picom &
+picom &
 # clipboard maanger
 clipmenu daemon &
 # light temp
 redshift  -c ~/.config/redshift/config &
 # status bar
-polybar -q main -c /home/kino/.config/polybar/config.ini &
-mpd &
+# polybar -q main -c /home/kino/.config/polybar/config.ini &
 # window manager
 exec bspwm

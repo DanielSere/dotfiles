@@ -64,7 +64,7 @@ entry {
 }
 
 message {
-    padding:      8px 12px;
+    padding:      8px 12px 8px 12px;
     border:       0px 0px 2px 0px;
     border-color: @accent-color;
 }
@@ -73,7 +73,7 @@ listview {
 	padding: 2px;
     lines:      12;
     columns:    1;
-	border: 0px;
+	border:     0px;
 	border-color: @accent-color;
     fixed-height:   false;
 }

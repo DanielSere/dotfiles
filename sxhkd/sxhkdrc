@@ -34,17 +34,13 @@ super + l
 super + m
 	bash ~/.config/rofi/musicmenu.sh
 
-# open nmtui
-super + n
-	~/.config/rofi/wifimenu.sh
+# open rofi note app
+super +n
+	bspc rule -a \* -o state=floating rectangle=900x550+630+445 && gnote
 
 # open powermenu
 super + p
 	bash ~/.config/rofi/powermenu.sh
-
-# screenshooter
-super + s
-	xfce4-screenshooter
 
 # open window state menu
 super + w
@@ -53,6 +49,36 @@ super + w
 super + ctrl + shift + n
 	echo "Ññ" | xclip -selection clipboard
 
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+XF86AudioRaiseVolume
+	pamixer -i 10
+
+XF86AudioLowerVolume
+	pamixer -d 10
+
+XF86AudioMute
+	pamixer -t
+
+# play next track
+XF86AudioNext
+	mpc next
+
+# play previous track
+XF86AudioPrev
+	mpc prev
+
+# play/pause music player
+Pause
+	mpc toggle
+
+# screenshooter
+Print
+	xfce4-screenshooter
 ###################
 ## bspwm hotkeys ##
 ###################
