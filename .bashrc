@@ -51,10 +51,9 @@ alias nodemon='npx nodemon'
 alias serve='npx serve -s'
 
 # Commands
-alias edit-sudo='sudo -Es nvim /etc/sudoers.d/wheel'
-alias edit-grub='sudo -Es nvim /etc/default/grub'
 alias polybar='pkill polybar; sleep 1; polybar -q main -c /home/kino/.config/polybar/config.ini &'
 alias xdgn='~/.local/bin/xdg-ninja/xdg-ninja.sh'
 alias bat='bat --style=plain --paging=never --color=always'
 alias clpfe="clear;pfetch;lsd -AlL --group-dirs=last --date=+'%d/%m/%y - %H:%M:%S' ~"
-
+alias drag='dragon-drop -x'
+alias wine='flatpak run org.winehq.Wine'

@@ -18,10 +18,14 @@ super + @Menu
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# toggle polybar
+super + b
+	togglebar.sh
+
 # open clipman popup
 super + c
 	clipmenu print | rofi -dmenu -p "Clipboard:" | xclip -selection clipboard
-	# rofi -theme-str "#mode-switcher \{ enabled: false; \}" -modi "Clipboard:~/.config/rofi/clipmenu print" -show Clipboard
+
 # opem emojimenu
 super + e
 	rofi -theme-str "#mode-switcher \{ enabled: false; \}" -modi emoji -show emoji -display-emoji "Emoji:"
@@ -79,6 +83,7 @@ Pause
 # screenshooter
 Print
 	xfce4-screenshooter
+
 ###################
 ## bspwm hotkeys ##
 ###################
@@ -105,13 +110,17 @@ super + k
 
 super + ctrl + Escape
 	touchpad_toggle.sh
+
 ###########
 ## focus ##
 ###########
 
 # toggle fullscreen
-super + f
-	bspc node --state ~fullscreen
+# super + f
+# 	bspc node --state ~fullscreen
+#
+# super + F
+# 	bspc node --state ~floating
 
 # toggle hide-show
 super + h
@@ -119,13 +128,15 @@ super + h
 
 # change windows focus
 super + alt + { Left, Down, Up, Right, Next, Prior }
-	bspc node -f { west, south, north, east, next.local.!hidden.window, prev.local.!hidden.window }
+	bspc node -f { west, south, north, east, \
+	next.local.!hidden.window, \
+	prev.local.!hidden.window }
 
 # focus next/prev desktop
 super + { Left, Right }
 	bspc desktop -f { prev, next }
 
-# send to next/prev desktop
+# send and follow to next/prev desktop
 super + ctrl + { Left, Right }
 	bspc node -d { prev, next } --follow
 

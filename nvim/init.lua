@@ -14,6 +14,5 @@ require 'user.colorizer'
 require 'user.lualine'
 require 'user.toggleterm'
 
-
 --[[ Modeline ]]
--- vim: ts=4 sw=4 sts=4 noet
+-- vim: ts=2 sw=2 sts=2 et

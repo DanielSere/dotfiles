@@ -52,6 +52,7 @@ require('packer').startup(function(use)
 	use 'folke/which-key.nvim'
 	use 'numToStr/Comment.nvim'
 	use 'nvim-lua/plenary.nvim'
+	use 'kovetskiy/sxhkd-vim'
 	use {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end }
 	use {"windwp/nvim-autopairs",   config = function() require("nvim-autopairs").setup {} end }
 end)

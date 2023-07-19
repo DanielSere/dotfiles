@@ -18,7 +18,5 @@ picom &
 clipmenu daemon &
 # light temp
 redshift  -c ~/.config/redshift/config &
-# status bar
-# polybar -q main -c /home/kino/.config/polybar/config.ini &
 # window manager
 exec bspwm
